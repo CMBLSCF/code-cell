@@ -1,0 +1,1127 @@
+用putchar语句输出：
+#include <iostream>
+using namespace std;
+int main()
+{ 
+	char a,b,c;
+	a='B';b='O';c='Y';
+	putchar(a);putchar(b);putchar(c);putchar('\n');
+	putchar(66);putchar(79);putchar(89);putchar(10);
+	return 0;
+}
+已知二次函数的a，b，c，求x1，x2；
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{ float a,b,c,x1,x2;
+  cin>>a>>b>>c;
+  x1=(-b+sqrt(b*b-4*a*c))/(2*a);
+  x2=((-b)-sqrt(b*b-4*a*c))/(2*a);
+  cout<<"x1="<<x1<<endl;
+  cout<<"x2="<<x2<<endl;
+	return 0;
+}
+
+3.2.6 逻辑常量与逻辑变量（判别式的判断）：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{ int a=2,b=9,c=4;
+  bool found,flag=false;
+  found=true;
+  if((b*b-4*a*c)>0) flag=true;
+  cout<<flag<<endl;
+	return 0;
+}
+
+
+3.6.3：逻辑运算和逻辑表达式：（判断某年是否为闰年）
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{ int a;
+cin>>a;
+  bool found,flag=false;
+  found=true;
+  if ((a%4==0 && a%100!=0) || a%400==0) cout<<"r"<<endl;
+  else cout<<"n"<<endl;
+	return 0;
+}
+
+3.7.1：if语句的形式：（求三角形的面积）
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	double a,b,c;
+	cout<<"please enter a,b,c:";
+	cin>>a>>b>>c;
+	if((a+b>c)&&(a+c>b)&&(b+c>a))
+	{
+		double s,area;
+		s=(a+b+c)/2;
+		area=sqrt(s*(s-a)*(s-b)*(s-c));
+		cout<<setiosflags(ios::fixed)<<setprecision(4);
+		cout<<"area="<<area<<endl;
+	}
+	else cout<<"it is not a trilateral!"<<endl;
+	return 0;
+}
+
+3.7.3 条件运算符和条件表达式 （判断一个符号是否为大写字母，如果是则转换为小写）
+#include <iostream>
+using namespace std;
+int main()
+{
+	char ch;
+	cin>>ch;
+	ch=(ch>='A' && ch<='Z')? (ch+32):ch;
+	cout<<ch<<endl;
+	return 0;
+}
+
+3.7.5  编写选择结构的程序：（用bool判断是否为闰年）
+#include <iostream>
+using namespace std;
+int main()
+{ int year;
+bool leap;
+cout<<"p;ease enter year:";
+cin>>year;
+if (year%4==0)
+{if(year%100==0)
+{if (year%400==0)
+leap=true;
+}
+else
+leap=false;
+}
+else
+leap=true;
+if(leap)
+cout<<year<<" is";
+else
+cout<<year<<"is not";
+cout<<" a leap year."<<endl;
+	return 0;
+}
+
+运输费用：
+#include <iostream>
+using namespace std;
+int main()
+{ int c,s;
+  float p,w,d,f;          //p为基本运费，w为货物重量，s为距离，d为折扣，f为总运费。c为s/250；
+  cout<<"please enter p,w,s:";
+  cin>>p>>w>>s;
+  if (s>=3000) c=12;
+  else c=s/250;
+  switch (c)
+  { case 0:d=0;break;
+  case 1:d=2;break;
+  case 2:
+  case 3:d=5;break;
+  case 4:
+  case 5:
+  case 6:
+  case 7:d=8;break;
+  case 8:
+  case 9:
+  case 10:
+  case 11:d=10;break;
+  case 12:d=15;break;
+  }
+  f=p*w*s*(1-d/100.0);
+  cout<<"freight="<<f<<endl;
+  return 0;
+}
+
+
+3.8.1 用while语句构成循环：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i=1,sum=0;
+	while (i<=100)
+	{sum=sum+i;
+	i++;
+	}
+	cout<<"sum="<<sum<<endl;
+}
+
+3.8.2 用do-while 语句构成循环
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i=1,sum=0;
+	do
+	{sum=sum+i;
+	i++;
+	}while (i<=100);
+	cout<<"sum="<<sum<<endl;
+}
+
+3.8.3 用for语句构成循环：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i=1,sum=0;
+	for (i=1;i<=100;i++) sum=sum+i;
+	cout<<"sum="<<sum<<endl;
+}
+
+表达式1可省略
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i=1,sum=0;
+	for (;i<=100;i++) sum=sum+i;
+	cout<<"sum="<<sum<<endl;
+}
+
+表达式3可以省略
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i=1,sum=0;
+	for (;i<=100;)
+	{sum=sum+i;
+	i++;
+	}
+	cout<<"sum="<<sum<<endl;
+}
+ASCII码相加：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i=1,sum=0;
+	char c;
+	for (i=1;(c=getchar())!='\n';i+=c);
+	cout<<"sum="<<i<<endl;
+}
+
+输出字符：
+#include <iostream>
+using namespace std;
+int main()
+{
+	char c;
+	for (;(c=getchar())!='\n';) cout<<c;
+	return 0;
+} 
+
+求Π：
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	double pi=0,n=1,i=1;
+	int s=1;
+	for (;fabs(i)>1e-7;)
+	{
+		pi=pi+i;
+		n+=2;
+		s=-s;
+		i=s/n;
+	}
+	pi=pi*4;
+	cout<<setiosflags (ios::fixed)<<setprecision(6)<<pi<<endl;
+	return 0;
+}
+
+斐波那契数列：
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	long f1=1,f2=1;
+	int n=1;
+	for (;n<=20;n++)
+	{
+		cout<<setw(12)<<f1<<setw(12)<<f2;
+		if(n%2==0) cout<<endl;
+		f1=f1+f2;
+		f2=f2+f1;
+
+	}
+	return 0;
+}
+
+
+
+输出100~200之间所有素数：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int m,k,i,n=0;
+	bool prime;
+	for (m=101;m<=200;m+=2)
+	{
+		prime=true;
+		k=int(sqrt(m));
+		for (i=2;i<=k;i++)
+		if (m%i==0)
+		{
+			prime=false;
+		break;
+	}
+	if (prime) 
+	{
+		cout<<setw(5)<<m;
+		n++;
+	}
+	if (n%10==0) cout<<endl;
+	}
+	cout<<endl;
+	return 0;
+}
+
+自编；
+#include <iostream>
+using namespace std;
+int main()
+{
+	char a;
+    a=getchar
+	for (;a=='\n';)
+	{
+		if ((a>='A'&&a<='Z'-4)||(a>='a'&&a<='z'-4))
+		{
+			a=a+4;
+		}
+		if ((a>='Z'&&a<='Z'+4)||(a>='z')) 
+		{
+			a=a-26;
+		}
+		putchar(a);
+	}
+	cout<<endl;
+	return 0;
+}
+
+密码：
+#include <iostream>
+using namespace std;
+int main()
+{
+	char a;
+	while ((a=getchar())!='\n')
+	{
+		if ((a>='A'&&a<='Z')||(a>='a'&&a<='z'))
+		{
+			a=a+4;
+		if ((a>='Z'&&a<='Z'+4)||(a>='z')) a=a-26;
+		}
+		cout<<a;
+	}
+	cout<<endl;
+	return 0;
+}
+
+判断水仙花数：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i,j,k,n;
+	cin>>n;
+	i=n/100;
+	j=n/10-i*10;
+	k=n%10;
+	if (n==i*i*i+j*j*j+k*k*k) cout<<1;
+	else cout<<0;
+	cout<<endl;
+	return 0;
+}
+
+输入一行字符，分别统计出其中英文字母、空格、数字和其他字符的个数。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	char c;
+	int letter=0,space=0,digit=0,other=0;
+	while ((c=getchar())!='\n')
+	{
+		if ((c>='a'&&c<='z'||c>='A'&&c<='Z'))
+			letter++;
+		else if (c==' ')
+			space++;
+		else if (c>='0'&&c<='9')
+			digit++;
+		else 
+			other++;
+	}
+	cout<<letter<<' '<<space<<' '<<digit<<' '<<other<<endl;
+	return 0;
+}
+
+求俩个或3个正整数中的最大数，（用带有默认参数的函数实现）：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int max(int a, int b, int c = 0);  //在此设置默认形参；（先到先得原理）
+	int a, b, c;
+	cin >> a >> b >> c;
+	cout << "max(a,b,c) =" << max(a, b, c) << endl;
+	cout << "max(a,b)=" << max(a, b) << endl;
+	return 0;
+}
+int max(int a, int b, int c)
+{
+	if (b > a) a = b;
+	if (c > a) a = c;
+	return a;
+}
+
+函数模板：
+#include <iostream>
+using namespace std;
+template <typename T>
+T max(T a, T b, T c)
+{
+	if (b > a) a = b;
+	if (c > a) a = c;
+	return a;
+}
+int main()
+{
+	int i1 = 185, i2 = -76, i3 = 567, i;
+	double d1 = 56.87, d2 = 90.23, d3 = -3214.78, d;
+	long g1 = 67854, g2 = -912456, g3 = 673456, g;
+	i = max(i1, i2, i3);
+	d = max(d1, d2, d3);
+	g = max(g1, g2, g3);
+	cout << "i_max=" << i << endl;
+	cout << "d_max=" << d << endl;
+	cout << "g_max=" << g << endl;
+	return 0;
+}
+
+
+函数的重载：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int max(int a, int b, int c);
+	double max(double a, double b, double c);
+	long max(long a, long b, long c);
+	int i1, i2, i3, i;
+	cin >> i1 >> i2 >> i3;
+	i = max(i1, i2, i3);
+	cout << "i_max=" << i << endl;
+	double d1, d2, d3, d;
+	cin >> d1 >> d2 >> d3;
+	d = max(d1, d2, d3);
+	cout << "d_max=" << d << endl;
+	long g1, g2, g3, g;
+	cin >> g1 >> g2 >> g3;
+	g = max(g1, g2, g3);
+	cout << "g_max=" << g << endl;
+}
+int max(int a, int b, int c)
+{
+	if (a < b) a = b;
+	if (a < c)a = c;
+	return a;
+}
+double max(double a, double b, double c)
+{
+	if (a < b) a = b;
+	if (a < c) a = c;
+	return a;
+}
+long max(long a, long b, long c)
+{
+	if (a < b) a = b;
+	if (a < c) a = c;
+	return a;
+}
+
+用来求俩个整数或3个整数中的最大数。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int max(int a, int b, int c);
+	double max(double a, double b, double c);
+	long max(long a, long b, long c);
+	int i1, i2, i3, i;
+	cin >> i1 >> i2 >> i3;
+	i = max(i1, i2, i3);
+	cout << "i_max=" << i << endl;
+	double d1, d2, d3, d;
+	cin >> d1 >> d2 >> d3;
+	d = max(d1, d2, d3);
+	cout << "d_max=" << d << endl;
+	long g1, g2, g3, g;
+	cin >> g1 >> g2 >> g3;
+	g = max(g1, g2, g3);
+	cout << "g_max=" << g << endl;
+}
+int max(int a, int b, int c)
+{
+	if (a < b) a = b;
+	if (a < c)a = c;
+	return a;
+}
+double max(double a, double b, double c)
+{
+	if (a < b) a = b;
+	if (a < c) a = c;
+	return a;
+}
+long max(long a, long b, long c)
+{
+	if (a < b) a = b;
+	if (a < c) a = c;
+	return a;
+}
+
+ 内置函数：
+#include <iostream>
+using namespace std;
+inline int max(int,int,int);
+int main()
+{
+	int i = 10, j = 20, k = 30, m;
+	m = max(i, j, k);
+	cout << "max=" << m << endl;
+	return 0;
+}
+inline int max(int a, int b, int c)
+{
+	if (b > a) a = b;
+	if (c > a) a = c;
+	return a;
+}
+
+
+计算阶乘的递归法：
+#include <iostream>
+using namespace std;
+long  fac(int);
+int main()
+{
+	int n;
+	long y;
+	cout << "please input an integer";
+		cin >> n;
+	y = fac(n);
+	cout << n << "!=" << y << endl;
+	return 0;
+}
+long fac(int n)
+{
+	long f;
+	if (n < 0)
+	{
+		cout << "n<0,data error!" << endl;
+		f = -1;
+	}
+	else if (n == 0 || n == 1) f = 1;
+	else f = fac(n - 1) * n;
+	return f;
+}
+比较字符大小：
+ #include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	void w(char q[][10],int i);
+	int i;
+	char q[2][10];
+	for (i=0;i<2;i++)
+		cin>>q[i];
+	w(q,2);
+	return 0;
+}
+void w(char q[][10],int n)
+{
+	int i;
+	char string[10];
+	strcpy(string,q[0]);
+	for (i=0;i<n;i++)
+	{
+		if (strcmp(string,q[i])<0)
+		{
+			strcpy(string,q[i]);
+			cout<<endl<<string<<endl;
+			break;
+		}
+		if (strcmp(string,q[i])==0) 
+		{cout<<string<<endl;break;}
+	}
+}
+
+//交换指针位置 ，交换指针指向的值i；
+#include <iostream>
+using namespace std;
+int main()
+{
+	void swap(int* x, int* y);
+	int a, b;
+	int* x, * y;
+	cin >> a >> b;
+	x = &a; y = &b;
+	if (a, b)
+		swap(x, y);
+	else
+		cout << *x << ' ' << *y << endl;
+	return 0;
+}
+void swap(int* x, int* y)
+{
+
+		int temp;
+		temp =*x;
+		*x = *y;
+		*y = temp;
+		cout << *x << ' ' << *y << endl;
+}
+//三个数比大小，指针篇）；
+#include <iostream>
+using namespace std;
+int main()
+{
+	void swap(int* x, int* y);
+	int a, b,c;
+	int* x, * y,*z;
+	cin >> a >> b>>c;
+	x = &a; y = &b; z = &c;
+	if (a< b)
+		swap(x, y);
+	if (a < c) swap(x, z);
+	if (b, c) swap(y, z);
+	cout << a << ' ' << b << ' ' << c << ' ' << endl;
+	return 0;
+}
+void swap(int* x, int* y)
+{
+
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+//数组表示方法之指针篇）；
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[10];
+	int  i, n, j;
+	for (i = 0; i < 10; i++)
+	{
+		cin >> *(a+i);
+	}
+	int* x, * t, * y;
+	for (i = 0; i < 10; i++)
+	{
+		cout << *(a + i) << ' ';
+	}
+	return 0;
+}
+//数组表示方法之指针篇）；
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[10];
+	int i, * p = a;
+	for (i = 0; i < 10; i++)
+	{
+		cin >> *(p + i);
+	}
+	cout << endl;
+	for (p = a; p < (a + 10); p++)
+		cout << *p << ' ';
+	cout << endl;
+	return 0;
+}
+
+//数组排序方法之冒泡法指针篇）；
+#include <iostream>
+using namespace std;
+int main()
+{
+	void sort(int* p, int n);
+	int a[10], i,*p;
+	for (i = 0; i < 10; i++) cin >> *(a + i);
+	sort(a, 10);
+	for (p = a; p < a + 10; p++) cout << *p<<' ';
+	return 0;
+}
+void sort(int* p, int n)
+{
+	int i, j,t;
+	for (i=0;i<n-1;i++)
+		for (j = 0; j < n - 1 - i;j++)
+		{
+			if (*(p+j) > *(p +j+1))
+			{
+				t = *(p+j);
+				*(p+j) = *(p +j+ 1);
+				*(p +j+ 1) = t;
+			}
+		}
+}
+ 
+
+结构体：例7-1：
+#include <iostream>
+using namespace std;
+struct date
+{
+	int month;
+	int day;
+	int year;
+};
+struct student
+{
+	int num;
+	char name[20];
+	char sex;
+	date birthday;
+	float score;
+}student1, student2 = { 10002,"Wang Li",'f',5,23,1992,89.5 };
+int main()
+{
+	student1 = student2;
+	cout << student1.num << endl;
+	cout << student1.name << endl;
+	cout << student1.sex << endl;
+	cout << student1.birthday.month << '/' << student1.birthday.day << '/' << student1.birthday.year << endl;
+	cout << student1.score << endl;
+	return 0;
+}
+
+
+//结构体数组
+#include <iostream>
+#include <string>
+using namespace std;
+struct person
+{
+	char name[20];
+	int count;
+};
+int main()
+{
+	person leader[3] = { "li",0,"zhang",0,"sun",0 };
+	int i, j;
+	char leader_name[20];
+	for (i = 0; i < 10; i++)
+	{
+		cin >> leader_name;
+		for (j = 0; j < 3; j++)
+			if (strcmp(leader_name, leader[j].name) == 0)leader[j].count++;
+	}
+	cout << endl;
+	for (i = 0; i < 3; i++)
+	{
+		cout << leader[i].name << ":" << leader[i].count << endl;
+	}
+	return 0;
+}
+
+//结构体数组（用字符串解决）
+#include <iostream>
+#include <string>
+using namespace std;
+struct person
+{
+	string name;
+	int count;
+};
+int main()
+{
+	person leader[3] = { "li",0,"zhang",0,"sun",0 };
+	int i, j;
+	string leader_name;
+	for (i = 0; i < 10; i++)
+	{
+		cin >> leader_name;
+		for (j = 0; j < 3; j++)
+			if (leader[j].name==leader_name)leader[j].count++;
+	}
+	cout << endl;
+	for (i = 0; i < 3; i++)
+	{
+		cout << leader[i].name << ":" << leader[i].count << endl;
+	}
+	return 0;
+}
+
+
+//指向结构体变量的指针；
+#include <iostream>
+#include <string>
+using namespace std;
+struct student
+{
+	int num;
+	string name;
+	char sex;
+	float score;
+};
+int main()
+{
+	student stu;
+	student* p = &stu;
+	stu.num = 9495;
+	stu.name = "wanfdk";
+	stu.sex = 'f';
+	stu.score = 100;
+	cout << stu.num << ' ' << stu.name << ' ' << stu.sex << ' ' << stu.score << endl;
+	cout <<  p->num << ' ' << (*p).name <<' '<< p->sex << ' ' << (*p).score << endl;
+	return 0;
+}
+
+//指向结构体变量的指针；（链表）
+#define NULL 0
+#include <iostream>
+#include <string>
+using namespace std;
+struct student
+{
+	int num;
+	float score;
+	struct student* next;
+};
+int main()
+{
+	student a, b, c, * head, * p;
+	a.num = 31001; a.score = 89.5;
+	b.num = 31003; b.score = 90;
+	c.num = 31007; c.score = 85;
+	head = &a;
+	a.next = &b;
+	b.next = &c;
+	c.next = NULL;
+	p = head;
+	do
+	{
+		cout << p->num << ' ' << p->score << endl;
+		p = p->next;
+	} while (p != NULL);
+	return 0;
+}
+
+//例6.15 通过引用得到变量的值；
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int a = 93;
+	int& b = a;
+	a = a * a;
+	cout << a << setw(6) << b << endl;
+	b = b / 5;
+	cout << b << setw(6) << a << endl;
+	return 0;
+}
+
+//例6.15 通过引用得到变量的值；(互换俩个形参得值）
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	void swap(int&, int&);
+	int i = 3, j = 5;
+	swap(i, j);
+	cout << i << ' ' << j << endl;
+	return 0;
+}
+void swap(int& a, int& b)
+{
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+
+
+//枚举类型举例：
+#include<iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{enum color{red,yellow,blue,white,black};
+color pri;
+int i, j, k, n = 0, loop;
+for (i=red;i<=black;i++)
+   for (j=red;j<=black;j++)
+   if (i != j)
+     {
+	for (k=red;k<=black;k++)
+		if ((k != i) && (k != j))
+		{
+			n = n + 1;
+			cout << setw(3) << n;
+			for (loop = 1; loop <= 3; loop++)
+			{
+				switch (loop)
+				{
+				case 1:pri = color(i); break;
+				case 2:pri = color(j); break;
+				case 3:pri = color(k); break;
+				default:break;
+				}
+				switch (pri)
+				{
+				case red:cout << setw(8) << "red"; break;
+				case yellow:cout << setw(8) << "yellow"; break;
+				case blue:cout << setw(8) << "blue"; break;
+				case white:cout << setw(8) << "white"; break;
+				case black:cout << setw(8) << "black"; break;
+				default:break;
+
+				}
+			}
+			cout << endl;
+		}
+}
+cout << "total:" << n << endl;
+return 0;
+}
+
+
+//字符数组指针运算  
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	char a[]="哈哈哈",*q,*w,b[109];
+	q=a;w=b;
+	for (;*q!='\0';q++,w++)
+	{
+		*w=*q;
+	}
+	*w='\0';  //结束标记  标记到+1位；
+	q=a;w=b;  //恢复到首地址；哈哈哈哈
+	cout<<q<<endl<<w<<endl;
+	char *p="Ihhh";
+	cout<<a<<endl<<p<<endl;
+	return 0;
+}
+
+偏移量法：
+#include <iostream>
+using namespace std;
+int main()
+{
+	char str[]="jei je kd",*p,*q,*w,a[100];
+	q=str,p=a;
+	for (int i=0;*(q+i)!='\0';i++)
+	{
+		*(p+i)=*(q+i);
+	}
+	*(p+i)='\0';
+	cout<<q<<endl<<p<<endl;
+	return 0;
+
+}
+指针指向函数入口：：：：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int max( int , int );
+	int (*p)(int , int);//保持一致，只用（*p）取代了 函数名
+    int a , b;
+	p=max;
+	cin >> a >> b;
+	cout <<p ( a , b ) << endl ;
+
+	return 0;
+}
+int max(int a , int b )
+{
+	if ( a > b )
+		return a ;
+	else return b ;
+}
+
+//返回指针，指针函数
+#include <iostream>
+using namespace std;
+int main()
+{
+	int *max(int a,int b);
+    int *(*p)(int ,int);
+	p=max;
+	int a,b;
+	cin>>a>>b;
+	cout<<*p(a,b)<<endl;
+	return 0;
+}
+int *max(int a , int b )
+{
+	static r;
+	r=a+b;
+	return &r;
+}
+
+//字符串比较：
+#include <iostream>
+using namespace std;
+void sort(char *p[],int n);
+void print (char *p[],int n);
+int main()
+{
+	char *name[]={"BASIC","FORTRAN","C+","Pascal","COBOL"};
+	int n=5;
+	sort(name,n);
+	print (name ,n );
+	return 0;
+}
+void sort(char *p[],int n)
+{
+	int i,k;
+	for (i=0;i<n;i++)
+	{
+		k=i;
+		for (int j=i;j<n;j++)
+		if (strcmp(p[j],p[k])<0) k=j;
+		char *temp;
+		temp=p[i];
+		p[i]=p[k];
+		p[k]=temp;
+	}
+}
+void print (char *p[],int n)
+{
+	for (int i=0;i<n;i++)
+		cout<<p[i]<<endl;
+}
+
+
+//函数  指针数组
+#include <iostream>
+using namespace std;
+int sum(int a,int b);
+int ca(int a,int b);
+int main()
+{
+	int (*p[2])(int ,int );
+	p[0]=sum;p[1]=ca;
+	int a,b;
+	cin>>a>>b;
+	cout<<p[0](a,b)<<endl<<p[1](a,b)<<endl;
+	return 0;
+}
+int sum(int a,int b)
+{
+	return a+b;
+}
+int ca(int a,int b)
+{
+	return a-b;
+}
+
+//一维数组  指针数组
+#include <iostream>
+using namespace std;
+int sum(int a,int b);
+int ca(int a,int b);
+int main()
+{
+	int (*p[2])[3];
+	int a[2][3]={3},b[2][3]={5};
+	p[0]=a,p[1]=b;
+	cout<<**p[0]<<endl<<**p[1]<<endl;
+	return 0;
+}
+//存地址的地址（一级地址，二级地址）  指针数组（一级运算得地址，二级运算得真值）
+#include <iostream>
+using namespace std;
+int sum(int a,int b);
+int ca(int a,int b);
+int main()
+{
+	char **p;
+	char *name[]={"BASIC","FORTRAN","C+","Pascal","COBOL"};
+	p=name+2;
+	cout<<p<<endl<<*p<<endl<<**p<<endl;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
