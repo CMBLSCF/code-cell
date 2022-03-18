@@ -1,0 +1,5371 @@
+Q1:.输入数字n（奇数），计算1+3+5+7+...+n的值，并输出。
+格式提醒：
+输入：一个整数，存入n；
+输出：输出和，后面有回车换行。
+
+#include <iostream>
+using namespace std;
+int main(int n,int N ,int Sn)
+
+{
+	cin>>n;
+	N=(n+1)/2;
+	Sn=N*N;
+	cout<<Sn<<endl;
+	return 0;
+}
+Q2:输入两个整数，输出这两个整数的和。
+#include <iostream>
+using namespace std;
+int main(int a,int b,int sum)
+
+{
+	cin>>a>>b;
+	sum=a+b;
+	cout<<sum<<endl;
+	return 0;
+}
+Q3:给出一个百分制成绩，要求输出成绩等级‘A’、 ‘B’、 ‘C’、 ‘D’、 ‘E’,90分以上为‘A’，80~89为‘B’， 70~79为‘C’， 60~69为‘D’， 60以下为‘E’。 输出格式提醒：只需要输出一个大写英文字母作为等级,之后输出endl。
+#include <iostream>
+using namespace std;
+int main(int a)
+{
+	char c1;
+	cin>>a;
+	if (a>=90) c1='A';
+	if (a>80,a<89) c1='B';
+	if (a>70,a<79) c1='C';
+	if (a>60,a<69) c1='D';
+	if (a<60) c1='E';
+	cout<<c1<<endl;
+	return 0;
+}
+
+switch语句类型：（学分级别）
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a;
+	cin>>a;
+    switch (a/10)
+	{
+	case 10: ;
+    case 9: cout<<"A\n"; break;
+	case 8:cout<<"B\n"; break;
+	case 7:cout<<"C\n"; break;
+	case 6:cout<<"D\n";break;
+	case 5:
+	case 4:
+	case 3:
+	case 2:
+	case 1:
+	case 0: cout<<"E\n";break;
+	}
+		return 0;
+}
+
+
+Q4:输入整数n和m（n<m），输出n到m的所有整数的和，注意包括n和m。
+输出格式提醒：输出和，之后输出endl。
+
+#include <iostream>
+using namespace std;
+int main(int m,int n,int Sg,int Sm,int z)
+{
+	cin>>n>>m;
+	Sm=(m*m+m)/2;
+	Sg=(n*n-n)/2;
+	z=Sm-Sg;
+	cout<<z<<endl;
+	return 0;
+}
+Q5:月份天数
+#include <iostream>
+using namespace std;
+int main(int a,int b)
+{
+	cin>>a;
+	if (a=1) b=31;
+	if (a=2) b=30;
+	if (a=3) b=31;
+	if (a=4) b=30;
+	if (a=5) b=31;
+	if (a=6) b=30;
+	if (a=7) b=31;
+		if (a=8) b=31;
+			if (a=9) b=30;
+				if (a=10) b=31;
+					if (a=11) b=30;
+						if (a=12) b=31;
+	
+	cout<<b<<endl;
+	return 0;
+}
+*Q6:由低到高输出
+#include <iostream>
+using namespace std;
+int main(int a,int b,int c,int m,int n,int z)
+{
+	cin>>a>>b>>c;
+	{
+		if (a>b) m=a;
+	else m=b;
+	if (m<c) m=c;
+	}
+	{
+		if (a>b) n=b;
+	else n=a;
+	if (n>c) n=c;
+	}
+	{
+	if (a>n,a<m) z=a;
+	else if (b>n,b<m) z=b;
+	else z=c;
+	}
+	cout<<n<<' '<<z<<' '<<m<<' '<<endl;
+	return 0;
+}
+Q7:转换学制
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,g,b=5,c=4,d=3,e=2,f=1;
+	cin>>a;
+	a>0,a<100;
+	if (a>=90,a<=100) g=b;
+	if (a>80,a<89) g=c;
+	if (a>60,a<79) g=d;
+	if (a>40,a<59) g=e;
+	if (a<40) g=f;
+	cout<<g<<endl;
+	return 0;
+}
+
+Q8:等差数列前n相和：
+#include <iostream>
+using namespace std;
+int main()
+{int a,b,c,n;
+cin>>n;
+a=n+(n*n-n)/2;
+cout<<a<<endl;
+return 0;
+}
+
+Q9:判断一个数是否为奇数：
+#include <iostream>
+using namespace std;
+int main()
+{int a,b,c,n;
+cin>>n;
+if(n%2==1) cout<<"yes"<<endl;
+else cout<<"no"<<endl;
+return 0;
+}
+
+
+*Q10:华氏温度转摄氏温度：
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	float F;
+	double c;
+	cout<<setiosflags(ios::fixed)<<setprecision(2);
+	cout<<"华氏温度:"<<" F=";
+	cin>>F;
+    c = (F-32)*5/9.0;                                      //注意变量的类型
+	cout<<"摄氏温度:"<<" c="<<c<<endl;
+	return 0;
+}
+
+Q11:A1、根据学生百分制分数得到其五分制成绩。要求输入一个百分制成绩，输出其对应五级（A,B,C,D,F）制的评定。评定的标准是：输入的分数在90~100分为A,80~89分为B, 70~79分为C, 60~69分为D,0~59分为F,否则显示“Error”。
+#include <iostream>
+using namespace std;
+int main(int a)
+{
+	char c1;
+	cin>>a;
+	{
+    if (a>=90&&a<100) c1='A';
+	else if (a>80&&a<89) c1='B';
+	else if (a>70&&a<79) c1='C';
+	else if (a>60&&a<69) c1='D';
+	else if (a>0&&a<60) c1='F';
+    else cout<<"Error"<<endl;
+	}
+	cout<<c1<<endl;
+	return 0;
+}
+
+Q12:
+有一个函数
+y={ x      x<1
+    | 2x-1   1<=x<10
+    \ 3x-11  x>=10
+
+写一段程序，输入x，输出y
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x,y;
+	cin>>x;
+	if (x<1) y=x;
+	else if (x<10&&x>=1) y=2*x-1;
+    else if (x>=10) y=3*x-11;
+	cout<<y<<endl;
+	return 0;
+}
+
+Q13：2.输入数字n，计算1+2+3+4+...+n的值，并输出。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x,y;
+	cin>>x;
+	y=x+(x*x-x)/2;
+	cout<<y<<endl;
+	return 0;
+}
+Q14:小写转大写：
+#include <iostream>
+using namespace std;
+int main()
+{
+	char x,y;
+	cin>>x;
+	y=x-32;
+	cout<<y<<endl;
+	return 0;
+}
+Q15:  判断闰年：
+#include <iostream>
+using namespace std;
+int main()
+{int n;
+cin>>n;
+if ((n%2==0&&n%100!=0) || (n%400==0))  cout<<"yes"<<endl;
+else cout<<"no";
+return 0;
+}
+
+Q16:求一个数的绝对值。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n,m;
+	cin>>n;
+	if (n>=0)m=n;
+	else if (n<0) m=-n;
+	cout<<m<<endl;
+	return 0;
+}
+
+Q17:求最大值；
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,n;
+	cin>>a>>b>>c;
+	if(a>b) n=a;
+	else n=b;
+	if (n<c) n=c;
+	cout<<n<<endl;
+	 return 0;
+}
+
+*设圆半径r，圆柱高h 求圆周长C1、圆面积Sa、圆球表面积Sb、圆球体积Va、圆柱体积Vb。 用scanf输入数据，输出计算结果，输出时要求文字说明，取小数点后两位数字。请编程序。 PI＝3.14
+#include <stdio.h>
+#include <iostream>
+#include <cstdio>
+#include <iomanip>
+#define PI 3.14
+using namespace std;
+int main()
+{
+	float r,h;
+	double C1,Sa,Sb,Va,Vb;
+	scanf ("%f %f",&r,&h);
+	C1=2*r*PI;
+    Sa=PI*(r*r);
+	Sb=4*PI*(r*r);
+	Va=(4.0/3.0)*PI*(r*r);
+	Vb=Sa*h;
+	cout<<setiosflags(ios::fixed)<<setprecision(2);
+    cout<<"C1="<<C1<<endl;
+	cout<<"Sa="<<Sa<<endl;
+	cout<<"Sb="<<Sb<<endl;
+	cout<<"Va="<<Va<<endl;
+	cout<<"Vb="<<Vb<<endl;
+	return 0;
+}
+
+*自编：（三个数比较大小并输出）:
+#include <iostream>
+using namespace std;
+int max(int x,int y)
+{
+	int z;
+	if (x>y) z=x;
+	else z=y;
+	return z;
+}
+int min(int x,int y)
+{
+	int z;
+	if (x<y) z=x;
+	else z=y;
+	return (z);
+}
+int main()
+{
+	int a,b,c,m,n,k,l,d;
+	cin>>a>>b>>c;
+	n=max(a,b);
+	m=max(n,c);
+	k=min(a,b);
+	l=min(k,c);
+	if (a>l&&a<m) d=a;
+	else if (b>l&&b<m) d=b;
+	else if (c>l&&c<m) d=c;
+	cout<<l<<' '<<d<<' '<<m<<' '<<endl;
+	return 0;
+}
+
+计算1~N之间所有奇数之和：
+#include <iostream>
+using namespace std;
+int main()
+{   
+	int sum=0,N,i=1;
+	cin>>N;
+	for (;i<=N;)
+	{
+		sum=sum+i;
+		i=i+2;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+输入数字n，计算数列1-2+3-4+5-6…..n的结果，并输出：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int sum=0,k=1,a=1,n,i=1;
+	cin>>n;
+	while ((fabs(i))<=(fabs(n)))
+	{
+		sum=sum+i;
+		a=-a;
+		k=k+1;
+		i=a*k;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+判断一个数是否为素数：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,k,n=2;
+	cin>>a;
+	bool prime;
+	k=int (sqrt(a));
+	for (;n<=k;n++)
+	{
+		prime=true;
+		if (a%n==0) 
+		{prime=false;
+		break;
+		}
+	}
+	if (prime) cout<<"y"<<endl;
+	else cout<<"n"<<endl;
+	return 0;
+}
+
+计算t=1+1/2+1/3+...+1/n：
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int n;
+	double sum=0,b=1,a=1;
+	cin>>n;
+while (b<=n)
+	{
+		sum=sum+a;
+		b++;
+		a=1/b;
+	}
+	cout<<setiosflags(ios::fixed)<<setprecision(6)<<sum<<endl;
+	return 0;
+}
+
+输入整数n，求2+4+6+8+10…n的结果，并输出。注意只输出结果，不要输出任何其他的内容。
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int sum=0,i=2,n;
+	cin>>n;
+	for (;i<=n;i+=2)
+	{
+		sum=sum+i;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+解一元二次方程ax^2+bx+c=0的解：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,b,c;
+	cin>>a>>b>>c;
+	double x1,x2;
+	x1=(-b+sqrt(b*b-4*a*c))/2*a;
+	x2=(-b-sqrt(b*b-4*a*c))/2*a;
+	cout<<setiosflags(ios::fixed)<<setprecision(2);
+	cout<<x1<<' '<<x2<<endl;
+	return 0;
+}
+
+求前n相之和：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int sum=0,a,n;
+	cin>>n;
+	for (a=1;a<=n;a++)
+	{
+		sum=sum+a;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+输出*
+**
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,d;
+	for (a=1;a<=4;a++)
+	{
+		for (b=1;b<=2*a-1;b++)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	for (c=5;c>=1;c--)
+	{
+		for (d=2*c-1;d>=1;d--)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+
+
+自由控制行数：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,d,n;
+	cin>>n;
+	for (a=1;a<=n;a++)
+	{
+		for (b=1;b<=2*a-1;b++)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	c=n-1;
+	for (;c>=1;c--)
+	{
+		for (d=2*c-1;d>=1;d--)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+
+四个数比大小并输出：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a, b, c, d;
+	cin >> a >> b >> c >> d;
+	if (a > b) swap(a, b);
+	if (a > c) swap(a, c);
+	if (a > d) swap(a, d);
+	if (b > c) swap(b, c);
+	if (b > d) swap(b, d);
+	if (c > d) swap(d, c);
+	cout << a << ' ' << b << ' ' << c << ' ' << d << endl;
+	return 0;
+}
+
+求奖金：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int i, n, c, bon1 = 10000, bon2 = bon1 + 7500, bon4 = bon2 + 10000, bon6 = bon4 + 6000, bon10 = bon6 + 6000;
+	cin >> i;
+	if (i > 1000000) c = 10;
+	else c = i / 100000;
+	switch (c)
+	{
+	case 0:n = 0.1 * i;break;
+	case 1:n = bon1 + (i - 100000) * 0.075;break;
+	case 2:
+	case 3:n = bon2 + (i - 200000) * 0.05;
+	case 4:
+	case 5:n = bon4 + (i - 400000) * 0.03;
+	case 6:
+	case 7:
+	case 8:
+	case 9:n = bon6 + (i - 600000) * 0.015;
+	case 10:n = bon10 + (i - 1000000) * 0.01;
+	}
+	cout << n << endl;
+	return 0;
+}
+
+将数值顺序输出：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int x, i = 0, h, n;
+	cin >> x;
+	n = x;
+	while (x > 0)
+	{
+		x = x / 10;
+		i++;
+	}
+	while (n > 0)
+	{
+		h = n / (pow(10, (i - 1)));
+		cout << h << ' ';
+		n = n % int((pow(10, (i - 1))));
+		i--;
+	}
+	return 0;
+}
+
+12=2*2*3；
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int prime(int n);
+	int n, i;
+	bool flag = true;
+	cin >> n;
+	cout << n << '=';
+	while (n > 1);
+	{
+		for (i = 2;i <= n;i++)
+		{
+			if (n % i == 0 && prime(i))
+			{
+				if (flag)
+				{
+					cout << i;
+						flag = false;
+				}
+				else
+					cout << '*' << i;
+				break;
+			}
+		}
+		n /= i;
+	}
+	cout << endl;
+	return 0;
+}
+int prime(int n)
+{
+	int i;
+	for (i = 2;i < n;i++)
+		if (n % i == 0)
+			break;
+	if (i = n) return 1;
+	else return 0;
+}
+
+
+三个数比大小并顺序输出：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,b,c,i;
+	cin>>a>>b>>c;
+	if (b>a) 
+	{
+		i=a;
+		a=b;
+		b=i;
+	}
+	if (c>a)
+	{
+		i=a;
+		a=c;
+		c=i;
+	}
+	if (c>b)
+	{
+		i=b;
+		b=c;
+		c=i;
+	}
+	cout<<c<<' '<<b<<' '<<a<<' '<<endl;
+	return 0;
+}
+
+
+
+输出十个数look 每个人是否及格：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int k,a,i=0;
+	while (i!=10)
+	{
+		cin>>a;
+		i++;
+		if (a>=90&&a<100) k=1;
+		else if (a>=80&&a<90) k=2;
+		else if (a>=70&&a<80) k=3;
+		else if (a>=60&&a<70) k=4;
+		else if (a<60) k=5;
+	switch (k)
+	{
+	case 1: cout<<'A'<<endl; break;
+    case 2:cout<<'B'<<endl; break;
+	case 3:cout<<'C'<<endl; break;
+	case 4:cout<<'D'<<endl; break;
+	case 5:cout<<'E'<<endl; break;
+	default:cout<<"error"<<endl;
+	}
+	}
+	return 0;
+}
+
+
+看字符数：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i=0;
+	char c;
+	while ((c=getchar())!='\n')
+	{
+		i++;
+	}
+	cout<<i<<endl;
+	return 0;
+}
+
+
+输出n后的第一个素数:
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int i=1,n,m=0,w,j;
+	cin>>n;
+	for (i=n+1;;i++)
+	{
+		for (j=2;j<i;j++)
+			if (i%j==0) break;
+			if (i==j) 
+			{
+				cout<<i<<endl;
+				break;
+			}
+	}
+	return 0;
+}
+输入三个整数，按照从大到小的顺序，输出这三个数字。 输出格式提醒：注意输出时，三个数字之间用空格隔开最后输出回车。（cout<
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,b,c;
+	cin>>a>>b>>c;
+	if (a>b) swap(a,b);
+	if (a>c) swap(a,c);
+	if (b>c) swap(b,c);
+	cout<<c<<' '<<b<<' '<<a<<endl;
+	return 0;
+}
+输入数字n（1<=n<=26），从第n个字母开始，输出一遍英文的所有大写字母。 输出格式提醒：输出26个英文大写字母，但是注意从哪个字母开始。
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	char qiu (int a);
+	int a,i;
+	char d;
+	cin>>a;
+	d=qiu(a);
+	for(i=1;i<=26;i++)
+	{
+		cout<<d;
+		if (d>='A'&&d<'Z') 
+		{
+			d=d+1;
+		}
+		else if (d>='Z') d=d-25;
+	}
+	cout<<endl;
+	return 0;
+}
+char qiu (int a)
+{
+	char c1='A';
+	int i=1;
+	for (i;i<a;i++)
+	{
+		c1=1+c1;
+	}
+	return c1;
+}
+
+分数制转换学位：
+#include <iostream>
+using namespace std;
+int main()
+{
+	char c;
+	int a=1,b,sum=0,q;
+	float k;
+	while (a<=5)
+	{
+		cin>>b;
+		if (b<60) 
+		{
+			cout<<'E'<<endl;
+	        sum=0;
+			break;
+		}
+		else 
+		{
+			for (;;)
+			{
+				sum=sum+b;
+				break;
+			}
+		}
+		a++;
+	}
+		k=sum/5;
+        q=k/10;
+		switch (q)
+		{
+		case 9: cout<<'A'<<endl;break;
+		case 8:cout<<'B'<<endl;break;
+		case 7: cout<<'C'<<endl;break;
+		case 6: cout<<'D'<<endl;break;
+		}
+return 0;
+	}
+
+5.输入10个整数，输出其中的最大值。：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,b,c,d,e,f,g,h,i,j;
+	cin>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j;
+	if (a<b) swap(a,b);
+    if (a<c) swap(a,c);
+	if (a<d) swap(a,d);
+	if (a<e) swap(a,e);
+	if (a<f) swap(a,f);
+	if (a<g) swap(a,g);
+	if (a<h) swap(a,h);
+	if (a<i) swap(a,i);
+	if (a<j) swap(a,j);
+	cout<<a<<endl;
+	return 0;
+}
+
+给出一个不多于5位的整数，要求 1、求出它是几位数 2、分别输出每一位数字 3、按逆序输出各位数字，例如原数为321,应输出123：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int wei(int a);
+	int a,b,i,k=1,c=10,d,n,h;
+	cin>>a;
+	n=a;
+	d=a;
+	b=wei(a);
+	i=b;
+	cout<<b<<endl;
+while (n > 0)
+	{
+	
+		h = n / (pow(10, (i - 1)));
+		if (i!=1)	cout << h<<' ';
+		else cout<<h;
+		n = n % int((pow(10, (i - 1))));
+		i--;
+	}
+	cout<<endl;
+	for(;k<=b;k++)
+	{
+		cout<<d%c;
+		d=d/10;
+	}
+	cout<<endl;
+	return 0;
+}
+int wei(int a)
+{
+	if (a/10000>=1) return 5;
+	else if (a/1000>=1) return 4;
+	else if (a/100>=1) return 3;
+	else if (a/10>=1) return 2;
+	else return 1;
+}
+
+输入两个正整数m和n，求其最大公约数和最小公倍数。：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int x,n,m,i,a;
+	cin>>n>>m;
+	x=n<m?n:m;
+	a=x;
+ 	for (x;x>=1;x--)
+	{
+		if (n%x==0&&m%x==0)
+			break;
+	}
+	cout<<x<<' ';
+	if (n<m) swap(n,m);
+	for (i=1;;i++)
+	{
+		if (m*i%n==0)
+		{
+			cout<<m*i;
+			break;
+		}
+	}
+	cout<<endl;
+	return 0;
+}
+
+一球从M米高度自由下落，每次落地后返回原高度的一半，再落下。 它在第N次落地时反弹多高？共经过多少米？ 保留两位小数：
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int i,n;
+	float M,h,sum=0;
+	cin>>M>>n;
+	for (i=1;i<=n;i++)
+	{
+		sum=sum+M;
+		h=(1/2.0)*M;
+		M=(1.0/2.0)*M;
+		if (i!=n) sum=sum+M;
+		else break;
+	}
+	cout<<setiosflags(ios::fixed)<<setprecision(2);
+	cout<<h<<' '<<sum<<endl;
+	return 0;
+}
+
+输出所有的水仙花数：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i,q,w,e;
+	for (i=100;i<1000;i++)
+	{
+		q=i%10;
+		e=i/100;
+		w=(i/10)-(e*10);
+		if (i==(q*q*q)+(w*w*w)+(e*e*e))
+		cout<<i<<endl;
+	}
+	return 0;
+}
+
+编一程序，由键盘输入字符，然后显示该字符是否是一个数字、大写字母、小写字母、一个空格或其它字符。例如：输入c，显示：小写字母；输入4，显示：数字。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	char c;
+	c=getchar();
+	if (c>='0'&&c<='9') cout<<"一个数字"<<endl;
+	else if (c>='A'&&c<='Z') cout<<"大写字母"<<endl;
+	else if (c>='a'&&c<='z') cout<<"小写字母"<<endl;
+	else if (c==' ') cout<<"一个空格"<<endl;
+	else cout<<"其他字符"<<endl;
+	return 0;
+}
+求x的n次方：
+#include <iostream>
+using namespace std;
+long  fac(int);
+int main()
+{
+	int qiu(int x,int n);
+	int x,n;
+	cin>>x>>n;
+	cout<<qiu(x,n)<<endl;
+	return 0;
+}
+int qiu(int x,int n)
+{
+	int y=1,i;	
+    for (i=1;i<=n;i++)
+	{
+		y=y*x;
+	}
+	return y;
+}
+
+求一个3×3矩阵对角线元素之和。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int j,k,a,b,c,d,e,f,g,h,i;
+	cin>>a>>b>>c;
+	cin>>d>>e>>f;
+	cin>>g>>h>>i;
+	j=a+e+i;
+	k=c+e+g;
+	cout<<j<<' '<<k<<endl;
+}
+
+
+写两个函数，分别求两个整数的最大公约数和最小公倍数，用主函数调用这两个函数，并输出结果两个整数由键盘输入。：
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int bei(int n,int m);
+	int yin(int n,int m);
+	int n,m;
+	cin>>n>>m;
+	cout<<yin(n,m)<<' '<<bei(n,m)<<endl;
+	return 0;
+}
+int bei(int n,int m)
+{
+	int i;
+	if (n<m) swap(n,m);
+	for (i=1;;i++)
+	{
+		if (m*i%n==0)
+		{
+			return m*i;
+			break;
+		}
+	}
+}
+int yin(int n,int m)
+{
+	int x;
+	x=n<m?n:m;
+ 	for (x;x>=1;x--)
+	{
+		if (n%x==0&&m%x==0)
+			break;
+	}
+	return x;
+}
+
+写一函数，输入一个四位数字，要求输出这四个数字字符，但每两个数字间空格。如输入1990，应输出"1 9 9 0"。：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,h,i=4;
+	cin>>a;
+while (i > 0)
+	{
+		h = a / (pow(10, (i - 1)));
+		cout << h<<' ';
+		a = a % int((pow(10, (i - 1))));
+		i--;
+	}
+cout<<endl;
+	return 0;
+}
+
+
+计算：t=1-1/(2*2)-1/(3*3)-...-1/(m*m)：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int m,i;
+	double t=1;
+	cin>>m;
+	for (i=2;i<=m;i++)
+	{
+		t=t-1.0/(i*i);
+	}
+	cout<<setiosflags(ios::fixed)<<setprecision(6);
+	cout<<t<<endl;
+	return 0;
+}
+
+2-5 输入5个正整数，将它们从小到大排序后输出。（输出结果最后无回车）：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,b,c,d,e;
+	cin>>a>>b>>c>>d>>e;
+	if (a<b) swap(a,b);
+    if (a<c) swap(a,c);
+	if (a<d) swap(a,d);
+	if (a<e) swap(a,e);
+	if (b<c) swap(b,c);
+	if (b<d) swap(b,d);
+	if (b<e) swap(b,e);
+	if (c<d) swap(c,d);
+	if (c<e) swap(c,e);
+	if (d<e) swap(d,e);
+	cout<<e<<' '<<d<<' '<<c<<' '<<b<<' '<<a;
+	return 0;
+}
+
+输入一个整数，大于一输出“>1”，小于一输出“<1”，等于一输出“=1”：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a;
+	cin>>a;
+	if (a>1) cout<<">1"<<endl;
+	else if (a==1) cout<<"=1"<<endl;
+	else if(a<1) cout<<"<1"<<endl;
+	return 0;
+}
+
+输入三个数，要求从小到大将这三个数输出。：
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,b,c;
+	cin>>a>>b>>c;
+	if (a<b) swap(a,b);
+    if (a<c) swap(a,c);
+	if (b<c) swap(b,c);
+	cout<<c<<' '<<b<<' '<<a;
+	return 0;
+}
+
+输入成绩，判断优良中差。90分以上输出youxiu，80分到89分输出lianghao，70到79分输出zhongdeng，60分到69分输出jige。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a;
+	cin>>a;
+	{
+    if (a>=90&&a<100) cout<<"youxiu"<<endl;
+	else if (a>80&&a<89) cout<<"lianghao"<<endl;
+	else if (a>70&&a<79) cout<<"zhongdeng"<<endl;
+	else if (a>60&&a<69) cout<<"jige"<<endl;
+	}
+	return 0;
+}
+
+ 寻找1到1000的素数，并将其按照每行5个输出。每个数字占5个输出位。（setw（5））：
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	long m,k,i,n=0;
+	bool sui;
+	for (m=1;m<=1000;m++)
+	{
+		sui=true;
+		k=sqrt(m);
+		for (i=2;i<=k;i++)
+		if (m%i==0)
+		{
+			sui=false;
+		    break;
+		}
+	if (sui==true)
+	{
+		cout<<setw(5)<<m;
+		n++;
+		if (n%5==0) cout<<endl;
+	}
+	}
+	return 0;
+}
+
+输入月份(1-12的正整数)，输出月份所在季度（1-3月第一季度，4-6月第二季度，7-9月第三季度，10-12月第四季度）。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a;
+	cin>>a;
+	if (a>=1&&a<=3) cout<<1;
+	else if (a>=4&&a<=6) cout<<2;
+	else if (a>=7&&a<=9) cout<<3;
+	else if (a>=10&&a<=12) cout<<4;
+	cout<<endl;
+	return 0;
+}
+
+定义两个整型变量，输出两个变量的和与积。输出的数字中间用一个空格隔开。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,b,ji,sum;
+	cin>>a>>b;
+	sum=a+b;
+	ji=a*b;
+	cout<<sum<<' '<<ji<<endl;
+	return 0;
+}
+
+定义整形变量n，输入n的值（n为偶数），使用函数计算2*4*6*8*…*n的值。：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int n,c=1,i;
+	cin>>n;
+	for (i=2;i<=n;i+=2)
+	{
+		c=c*i;
+	}
+	cout<<c<<endl;
+	return 0;
+}
+数列求和，输入整数n，输出1+1*2+...+1*2*3*...*n，最后一项有n个2，编程输出该数列的和。：
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int jie(int x);
+	int a,i,sum=0;
+	cin>>a;
+	for (i=1;i<=a;i++)
+	{
+		sum=sum+jie(i);
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+int jie(int x)
+{
+	int sum=1,a;
+	for (a=1;a<=x;a++)
+	{
+		sum=sum*a;
+	}
+	return sum;
+}
+
+2319：
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a,b,d;
+char c;
+cin>>a>>b>>c;
+if(a>=10||a<0)
+d=a+b/1;
+  else
+      d=a*b;
+if(c>='A'&&c<='Z')
+{
+	c=c+('a'-'A');
+    c=c+1;
+}
+   else
+     c=97;
+cout<<"The program output:"<<'\n';
+cout<<a<<b<<d<<c<<endl;
+cout<<"The program end";
+return 0;
+}
+
+2.    输入半径，计算半圆的面积，π=3.14，结果不保留小数，即取整数。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int r,b;
+	const double PI=3.14;
+	cin>>r;
+	b=(1.0/2)*PI*r*r;
+	cout<<b<<endl;
+return 0;
+}
+
+3.    输入一个两位整数，如果十位上的数字加上个位上的数字和为9，输出nice,否则输出bad。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int r,b,c;
+	cin>>r;
+	b=r/10;
+	c=r%10;
+	if (b+c==9) cout<<"nice"<<endl;
+	else cout<<"bad"<<endl;
+return 0;
+}
+
+
+输入10个数字，然后逆序输出。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[10],i,k,n;
+	for (i=0;i<=9;i++)
+	{
+		cin>>n;
+		a[i]=n;
+	}
+	for (k=9;k>=0;k--)
+	{
+		if (k!=0)
+		cout<<a[k]<<' ';
+		else cout<<a[k];
+	}
+	cout<<endl;
+	return 0;
+}
+
+第三题 输入一行字符（最多20个），以#作为结束标志，统计输入的字符中英文小写字母和大写字母的数量。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	char c;
+	int i=0,k=0;
+	for(;(c=getchar())!='#';)
+	{
+	 if (c>='A'&&c<='Z') i++; 
+	 if (c>='a'&&c<='z') k++;
+	}
+	cout<<k<<' '<<i<<endl;
+	return 0;
+}
+
+5. 输入三句话，统计这三句话的长度（其中字符的个数），并输出。
+格式提醒：输出的数字用空格隔开，完成后回车换行。：
+
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	char a;
+	int b=0,d=0,k=0;
+	for (;(a=getchar())!='\n';)
+	{
+		d++;
+	}
+	for (;(a=getchar())!='\n';)
+	{
+		b++;
+	}
+	for (;(a=getchar())!='\n';)
+	{
+		k++;
+	}
+	cout<<d<<' '<<b<<' '<<k<<endl;
+	return 0;
+}
+
+输入月份，输出该月份对应的天数。注意，不考虑闰年。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int a,b=31,c=30,d=28;
+	cin>>a;
+	switch (a)
+	{
+	case 1: cout<<b<<endl;break;
+	case 2: cout<<d<<endl;break;
+	case 3: cout<<b<<endl;break;
+	case 4: cout<<c<<endl;break;
+    case 5: cout<<b<<endl;break;
+	case 6: cout<<c<<endl;break;
+	case 7: cout<<b<<endl;break;
+	case 8: cout<<b<<endl;break;
+	case 9: cout<<c<<endl;break;
+	case 10: cout<<b<<endl;break;
+	case 11: cout<<c<<endl;break;
+	case 12: cout<<b<<endl;break;
+	}
+	return 0;
+}
+
+输入一个整数，将其赋值给一个字符型变量，输出该整数代表的asc码对应的字符。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int a;
+	char b;
+	cin>>a;
+	b=a;
+	cout<<b<<endl;
+	return 0;
+}
+
+2. 输入一行字符（注意会包含空格），将其中的英文字符全部变成大写之后输出。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	char c;
+	for (;(c=getchar())!='\n';)
+	{
+		if (c>='a'&&c<='z') c=c-32;
+		cout<<c;
+	}
+	cout<<endl;
+	return 0;
+}
+
+
+4. 输入整数n，计算1+1+2+1+2+3+…+1+2+3+…+n的和。：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int jie(int n);
+	int i,n,sum=0;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		sum=sum+jie(i);
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+int jie(int n)
+{
+	int sum=0,a;
+	for (a=1;a<=n;a++)
+	{
+		sum=sum+a;
+	}
+	return sum;
+}
+
+7.输入10个整数，对这10个整数由小到大排序。格式提醒：输出的每个数字之后都有空格，之后回车换行。：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a[11];
+	int i,j,t;
+	for (i=1;i<11;i++)
+	cin>>a[i];
+	for (j=1;j<=9;j++)
+	for (i=1;i<=10-j;i++)
+	if (a[i]>a[i+1])
+	{
+		t=a[i];a[i]=a[i+1];a[i+1]=t;
+	}
+	for(i=1;i<11;i++)
+	cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+输入整数n，判断一下n是几位数并输出。 输出格式提醒：输出一个数字代表几位数，之后endl。：
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a,b=1,i;
+	cin>>a;
+	for (i=0;;)
+	{
+		if (a/b!=0) i++;
+		else break;
+		b=b*10;
+	}
+	cout<<i<<endl;
+	return 0;
+}
+
+
+用宏定义：
+#include<iostream>
+#include<iomanip>
+#define pi(a,b) a%b; 
+using namespace std;
+int main()
+{
+	int q,a,b;
+	cin>>a>>b;
+	q=pi(a,b);
+	cout<<q<<endl;
+ return 0;
+}
+
+递归求
+#include <iostream>
+using namespace std;
+int main()
+{
+	int fac(int n);
+	int n,x;
+	cin>>n;
+	x=fac(n);
+	cout<<x<<endl;
+	return 0;
+}
+int fac(int n)
+{
+	int sum;
+	if (n==1) sum=1;
+	else sum=fac(n-1)+n*n;
+	return sum;
+}
+
+
+从键盘接收1个字符，判断是什么类型（数字，小写，大写），如果是小写字母，进行加密，向后移位三个字符，超过z则从a开始。其他两种类型不变。输出字符的类型和值，小写字母输出加密后的值（原值不输出）。类型为拼音xiaoxie，daxie，shuzi。
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	char a;
+	cin>>a;
+	if (a>='a'&&a<='z')
+	{
+		a=a+3;
+		if (a>'z') a=a-26;
+		cout<<"xiaoxie"<<' '<<a<<endl;
+	}
+	else if (a>='A'&&a<='Z') 
+		cout<<"daxie"<<' '<<a<<endl;
+	else if (a>='0'&&a<='9') 
+		cout<<"shuzi"<<' '<<a<<endl;
+	return 0;
+}
+
+
+寻找一百以上一万以内的水仙花数，并将其输出。水仙花数为数字的各个位上的数的n次方之和与这个数本身相等的数，（三位数n为三，四位数n为四）。输出结果在一行，用一个空格隔开。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int sum=0,n,i,a,b,c,d;
+	for (i=101;i<1000;i++)
+	{
+		a=i%10;
+		b=i/100;
+		c=i/10-b*10;
+		if (i==a*a*a+b*b*b+c*c*c)
+		{
+			cout<<i<<' ';
+		}
+	}
+	for (i=1001;i<10000;i++)
+	{
+		a=i%10;
+		b=i%100;
+		b=b/10;
+		c=i/1000;
+		d=i/100;
+		d=d-c*10;
+		if (i==a*a*a*a+b*b*b*b+c*c*c*c+d*d*d*d)
+			cout<<i<<' ';
+	}
+	cout<<endl;
+	return 0;
+}
+
+
+
+
+输入一个整数（最大五位数），判断每一位上的数字中有几个偶数。输出偶数的个数，没有输出数字0.注意数字0既不算偶数也不算奇数。
+
+#include <iostream>
+#include <iomanip>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n,m=0,c=0,a;
+	cin>>n;
+	while (n>0)
+	{
+		a=n%10;
+		if (a%2==0)
+			c++;
+		n=n/10;
+	}
+	cout<<c<<endl;
+	return 0;
+}
+
+
+逆序输出：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int a[10],i;
+	for (i=0;i<10;i++)
+		cin>>a[i];
+	for (i=9;i>=0;i--)
+		cout<<a[i]<<' ';
+	return 0;
+}
+
+
+求最小值：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int a[10],i,min;
+	for (i=0;i<10;i++)
+		cin>>a[i];
+	min=a[0];
+	for (i=1;i<10;i++)
+	{
+		if (min>a[i]) swap(min,a[i]);
+	}
+	cout<<min<<endl;
+	return 0;
+}
+
+n,m之间的偶数和：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n,i,m,sum=0;
+	cin>>n>>m;
+	if (n%2==0)
+	{
+		for (i=n;i<=m;i+=2)
+		{
+			sum=sum+i;
+		}
+	}
+	else 
+	{
+	  for (i=n+1;i<=m;i+=2)
+	{
+		sum=sum+i;
+	}
+	}
+cout<<sum<<endl;
+	return 0;
+}
+
+
+2.使用24小时格式,按照时分秒的顺序输入两组时间，按照时间先后顺序，输出这两组时间。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int m,n,k,q,w,e;
+	cin>>n>>m>>k;
+	cin>>q>>w>>e;
+	if (n>q)
+	{
+		cout<<q<<':'<<w<<':'<<e<<endl<<n<<':'<<m<<':'<<k<<endl;
+	}
+	else if (n==q)
+	{
+		if (m>w) cout<<q<<':'<<w<<':'<<e<<endl<<n<<':'<<m<<':'<<k<<endl;
+		else if (m==w)
+		{
+			if (k>e) cout<<q<<':'<<w<<':'<<e<<endl<<n<<':'<<m<<':'<<k<<endl;
+			else  cout<<n<<':'<<m<<':'<<k<<endl<<q<<':'<<w<<':'<<e<<endl;
+		}
+		else cout<<n<<':'<<m<<':'<<k<<endl<<q<<':'<<w<<':'<<e<<endl;
+	}
+	else cout<<n<<':'<<m<<':'<<k<<endl<<q<<':'<<w<<':'<<e<<endl;
+	return 0;
+}
+
+4.输入两个整数n和m，n小于m，计算n+n+1+n+2+…+m的结果。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n,i,m,k,sum=0;
+	cin>>n>>m;
+	for (;k<=m;)
+	{
+		sum=sum+n;
+        n=n+1;
+	}
+cout<<sum<<endl;
+	return 0;
+}
+
+课本：筛法求素数。
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int m,a[101],i,j;
+	for (i=1;i<100;i++)
+	a[i]=1;
+	a[1]=0;
+	m=sqrt(100);
+	for (i=2;i<=m;i++)
+	{
+		for (j=100;j>i;j--)
+			if (j%i==0)
+			a[j]=0;
+	}
+	i=0;
+	for (j=1;j<=100;j++)
+	{
+		if (a[j]!=0) {
+			cout<<setw(5)<<j<<' ';
+			i++;	if (i%5==0) cout<<endl;}
+	
+	}
+	cout<<endl;
+	return 0;
+}
+
+08.      定义一个3行4列的二维输出，对其赋值，之后找到该二维数组的最小值与最大值，并输出。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[3][4],i,j,k;
+	for (i=0;i<3;i++)
+		for (j=0;j<4;j++)
+			cin>>a[i][j];
+	k=a[0][0];
+	for (i=0;i<3;i++)
+		for (j=0;j<4;j++)
+		{
+			if (k>a[i][j]) swap(k,a[i][j]);
+		}
+		cout<<k<<' ';
+	for (i=0;i<3;i++)
+		for (j=0;j<4;j++)
+		{
+			if (k<a[i][j]) swap(k,a[i][j]);
+		}
+		cout<<k<<endl;
+		return 0;
+}
+
+
+﻿1.输入5个数，将这五个数排序，从小到大输出，方法不限。：
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a[5],i;
+	for (i=0;i<5;i++)
+		cin>>a[i];
+	sort(a,a+5);
+	for (i=0;i<5;i++)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+输入5个数，将这五个数排序，从大到小输出，方法不限。：
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+bool cmp(int a,int b)
+{
+	return a>b;
+}
+int main()
+{
+	int a[5],i;
+	for (i=0;i<5;i++)
+		cin>>a[i];
+	sort(a,a+5,cmp);
+	for (i=0;i<5;i++)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+输入10个字符，对这十个字符进行排序，按照从小到大的形式输出。：
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int main()
+{
+	char a[10],j,i;
+	for (i=0;i<10;i++)
+		cin>>a[i];
+sort(a,a+10);
+		for (i=0;i<10;i++)
+			cout<<a[i]<<' ';
+		cout<<endl;
+	return 0;
+}
+
+
+2045：输入一行字符（最多100个字符，只包含空格和单词），判断其中有多少个单词（单词之间使用空格隔开，但空格不止一个）。：
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	int i=0;
+	char c;
+	for (;(c=getchar())!='\n';)
+	{
+		if (c==' ') i++;
+	}
+	cout<<i+1<<endl;
+	return 0;
+}
+
+
+2046定义一个三行三列的二维数组，输出每一行的三个数字的和。
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	int q,w,e,a[3][3],i,j;
+	q=w=e=0;
+	for (i=0;i<3;i++)
+		for (j=0;j<3;j++)
+			cin>>a[i][j];
+		for (i=0;i<3;i++)
+		{
+			q=q+a[0][i];
+			w=w+a[1][i];
+			e=e+a[2][i];
+		}
+		cout<<q<<' '<<w<<' '<<e<<' '<<endl;
+	return 0;
+}
+
+2047：输入10个整数，将每个数字反向输出（如123输出321）。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	int q,w,k,a[10],i,j;
+	for (i=0;i<10;i++)
+		cin>>a[i];
+	for (i=0;i<10;i++)
+	{
+		if (a[i]/100==0)
+		{
+		k=a[i]%10;
+		q=a[i]/10;
+		a[i]=k*10+q;
+		}
+		if (a[i]/100!=0)
+		{
+			k=a[i]%10;
+			q=a[i]/100;
+			w=a[i]/10-q*10;
+			a[i]=k*100+w*10+q;
+		}
+	}
+	for (i=0;i<10;i++)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+2053：输入两个整数，求他们的最小公倍数。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	int i,j,n,m;
+	cin>>n>>m;
+	if (n>m) swap(n,m);
+	for(i=n;i>=2;i--)
+	{
+		if (n%i==0&&m%i==0)
+			break;
+	}
+	cout<<n*m/i<<endl;
+	return 0;
+}
+
+
+2060：输入数字n（小于10），输出图形。：
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	int i,j,k,n;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		for (j=1;j<=n-i;j++)
+			cout<<' ';
+		for(k=1;k<=2*i-1;k++)
+			cout<<'*';
+		cout<<endl;
+	}
+	return 0;
+}
+
+
+
+2061：输入年，月份和日子，输出其是该年的第几天。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int k,n,m,j;
+	cin>>n>>m>>k;
+	if ((n%4==0&&n%100!=0)||(n%400==0))
+	{
+		switch(m)
+		{
+		case 1: j=0;break;
+		case 2: j=31;break;
+		case 3: j=60;	break;
+        case 4: j=91;break;
+        case 5: j=121;break;
+        case 6: j=152;break;
+        case 7: j=182;break;
+        case 8: j=213;break;
+        case 9: j=244;break;
+        case 10: j=274;break;
+        case 11: j=305;break;
+        case 12: j=335;break;
+		}
+	}
+	else {
+		switch(m)
+		{
+		case 1: j=0;break;
+		case 2: j=31;break;
+		case 3: j=59;	break;
+        case 4: j=90;break;
+        case 5: j=120;break;
+        case 6: j=151;break;
+        case 7: j=181;break;
+        case 8: j=212;break;
+        case 9: j=243;break;
+        case 10: j=273;break;
+        case 11: j=304;break;
+        case 12: j=334;break;
+		}
+	}
+	cout<<j+k<<endl;
+	return 0;
+}
+
+
+
+
+2162：输入一个日期，包含月份和日子，判断该日期为一年的第多少天，将结果输出。（不考虑闰年因素）
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int k,n,m,j;
+	cin>>m>>k;
+		switch(m)
+		{
+		case 1: j=0;break;
+		case 2: j=31;break;
+		case 3: j=59;	break;
+        case 4: j=90;break;
+        case 5: j=120;break;
+        case 6: j=151;break;
+        case 7: j=181;break;
+        case 8: j=212;break;
+        case 9: j=243;break;
+        case 10: j=273;break;
+        case 11: j=304;break;
+        case 12: j=334;break;
+		}
+	cout<<j+k<<endl;
+	return 0;
+}
+
+
+
+
+2193：有数列1 4 7 10 13 16.....，输入n表示数列的项数，n<=300，求该等差数列偶数项的和。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int i=1,j,n,k=1,sum=0;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		if (i%2==0)
+		sum=sum+k;
+		k+=3;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2194：编写程序求解图形的面积，在主函数中分别调用两个子函数，第一个子函数的功能是：用户输入底边和高，能够计算出三角形面积；第二个子函数的功能是：用户输入半径，能够计算圆形的周长。所有小数位double类型。必须使用函数，否则不得分。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	double san(double a,double b);
+	double yuan(double a);
+    int i,j,k;
+	cin>>i>>j;
+	cin>>k;
+	cout<<san(i,j)<<endl;
+	cout<<yuan(k)<<endl;
+	return 0;
+}
+double san(double a,double b)
+{
+	return 0.5*(a*b);
+}
+double yuan(double a)
+{
+	return 3.14*2*a;
+}
+
+2195：输入10个数字，存放在数组中，再输入一个数字，查找该数字出现过几次，没有为0次。将次数输出。要求必须使用数组，不使用本题不得分。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int a[10],i,j,k=0;
+	for (i=0;i<10;i++)
+		cin>>a[i];
+	cin>>j;
+	for (i=0;i<10;i++)
+		if (j==a[i]) k++;
+		cout<<k<<endl;
+	return 0;
+}
+
+2202：编程，输入十个字符，统计其中大写字母，小写字母，数字字符，空格和其他字符的个数。输出结果用空格隔开，按照上面的顺序，最后一个输出后没有空格，有回车换行。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	char c;
+	int letter=0,space=0,digit=0,other=0,da=0;
+	while ((c=getchar())!='\n')
+	{
+		if (c>='a'&&c<='z') letter++;
+			else if (c>='A'&&c<='Z') da++;
+		else if (c==' ')
+			space++;
+		else if (c>='0'&&c<='9')
+			digit++;
+		else 
+			other++;
+	}
+	cout<<da<<' '<<letter<<' '
+		<<digit<<' '<<space
+		<<' '<<other<<endl;
+	return 0;
+}
+
+2203：编程，输入十个学生的百分制整数成绩，输出其所对应的五级等级，如
+
+90-100（A），80-89（B），70-79（C），60-69（D），60以下（E）。
+
+每个等级之间用空格隔开，最后一个等级后也有空格。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int k,a,i=0;
+	while (i!=10)
+	{
+		cin>>a;
+		i++;
+		if (a>=90&&a<=100) k=1;
+		else if (a>=80&&a<90) k=2;
+		else if (a>=70&&a<80) k=3;
+		else if (a>=60&&a<70) k=4;
+		else if (a<60) k=5;
+	switch (k)
+	{
+	case 1: cout<<'A'<<' '; break;
+    case 2:cout<<'B'<<' '; break;
+	case 3:cout<<'C'<<' '; break;
+	case 4:cout<<'D'<<' '; break;
+	case 5:cout<<'E'<<' '; break;
+	default:cout<<"error"<<endl;
+	}
+	}
+	cout<<endl;
+	return 0;
+}
+
+2205：编程解决鸡兔同笼问题，已知共有头36个，脚100个，求得笼中共关了多少只鸡，多少只兔子？分别输出鸡和兔子的只数，中间用空格隔开。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i,j;
+	for (i=0;i<=36;i++)
+		for(j=0;j<=36-i;j++)
+
+			if ((i+j==36)&&
+				(i*2+j*4==100))
+				cout<<i<<' '<<j<<' '
+				<<endl;
+		}
+	return 0;
+}
+
+2206：编程 求得100-1000以内的所有水仙花数，(水仙花数即这个数等于他每位数字上的立方和相加)。输出结果用空格隔开，最后一个数后也有空格。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int sum=0,n,i,a,b,c,d;
+	for (i=101;i<1000;i++)
+	{
+		a=i%10;
+		b=i/100;
+		c=i/10-b*10;
+		if (i==a*a*a+b*b*b+c*c*c)
+		{
+			cout<<i<<' ';
+		}
+	}
+	cout<<endl;
+	return 0;
+}
+
+2207：编程 ,输入1个整数，将它逆序输出。要求定义并调用函数rev(number)，它的功能是返回number的逆序数。例如，rev(12345)的返回值是54321，结果之后加回车。：
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int fan(int n);
+	int n;
+	cin>>n;
+	cout<<fan(n)<<endl;
+	return 0;
+}
+int fan(int n)
+{
+	int q,sum=0,i,j=0,k,m;
+	k=n;
+	while (n!=0)
+	{
+	
+		n=n/10;
+		j++;
+	}
+	for (i=j;i>=1;i--)
+	{
+		q=k%10;
+		m=pow(10,i-1);
+		sum=sum+q*m;
+		k=k/10;
+	}
+	return sum;
+}
+2208：编程，输入n个整数（n<=10），将它们从小到大排列。使用冒泡排序方法或使用选择排序方法。输出结果用一个空格隔开，最后有回车。
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a[10],n,i,j;
+	cin>>n;
+	for(i=0;i<n;i++)
+	cin>>a[i];
+	for(i=0;i<n-1;i++)
+	{
+		for (j=i;j<n;j++)
+			if (a[i]>a[j]) swap(a[i],a[j]);
+	}
+	for(i=0;i<n;i++)
+	cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+（chimpon)		
+#include <iostream>
+#include <cmath>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a[10],n,i,j;
+	cin>>n;
+	for(i=0;i<n;i++)
+	cin>>a[i];
+	sort(a,a+n);
+/*	for(i=0;i<n-1;i++)
+	{
+		for (j=i;j<n;j++)
+			if (a[i]>a[j]) swap(a[i],a[j]);
+	}*/
+	for(i=0;i<n;i++)
+	cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+		
+2237:从键盘接收字符（包括英文字母，数字，和!@#$%^&*），个数未知，以*号结束。接收的字符如果是英文大写字母，将其转换为小写后输出，其他类型字符原样输出。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	char c;
+	for (;(c=getchar())!='*';)
+	{
+		if (c>='A'&&c<='Z') c=c+32;
+		cout<<c;
+	}
+	cout<<endl;
+	return 0;
+}
+
+		
+2240:数列1 1 2 3 5 8 13 21………（斐波那契数列），输入整数n，求这一数列的前n项的和。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n,i,a[1000]={1,1},sum=0,j;
+    cin>>n;
+    for (i=2;i<n;i++)
+	{
+		a[i]=a[i-1]+a[i-2];
+	}
+	for(i=0;i<n;i++)
+	{
+		sum=sum+a[i];
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2241:输入一个最大为5位数的整数，将这一整数的每一个位数上的数字，按照先高位后低位的顺序输出，每一位上的数字输出时，之间用一个空格隔开。
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n,a[10],i,j,q;
+	cin>>n;
+	for(i=0;;i++)
+	{
+		q=n%10;
+		a[i]=q;
+		n=n/10;
+		if (n==0) break;
+	}
+	for(i;i>=0;i--)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+
+2243：定义整形变量n，输入n的值，计算数列1*2+2*3+3*4...（n-1）*n
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n,i,k,sum=0;
+	cin>>n;
+	for(i=1;i<n;i++)
+	{
+		k=i*(i+1);
+		sum=sum+k;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2246：定义一个一维整形数组，最多10个数，输入数字n（n<=10），再输入n个数字，找到该数组中的最小值，并输出。注意：所有对数组中数字的操作，必须使用指针。
+#include <iostream>
+#include <cmath>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a[10],n,i,j,max;
+	cin>>n;
+	for(i=0;i<n;i++)
+	cin>>a[i];
+	max=a[0];
+	for(i=0;i<n;i++)
+	{
+		if (max>a[i]) swap(max,a[i]);
+	}
+	cout<<max<<endl;
+	return 0;
+}	
+2248：定义整形变量n，输入n的值，计算数列（1+2）+（2+3）+（3+4）+…+（（n-1）+n）。：
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n,i,k,sum=0;
+	cin>>n;
+	for(i=1;i<n;i++)
+	{
+		k=i+(i+1);
+		sum=sum+k;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2250：定义一个一维整形数组，最多10个数，输入数字n（n<=10），再输入n个数字进行从大到小的排序，并输出排序后的结果。
+#include <iostream>
+#include <cmath>
+#include<algorithm>
+using namespace std;
+int cmp(int a,int b)
+{
+	return a>b;
+}
+int main()
+{
+	int a[10],n,i,j;
+	cin>>n;
+	for(i=0;i<n;i++)
+	cin>>a[i];
+	sort(a,a+n,cmp);
+	for(i=0;i<n;i++)
+	cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+2251：定义一个一维整形数组，最多10个数，输入数字n（n<=10），再输入n个数字，找到该数组中的最大值，并输出。注意：所有对数组中数字的操作，必须使用指针。
+#include <iostream>
+#include <cmath>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a[10],n,i,j,max;
+	cin>>n;
+	for(i=0;i<n;i++)
+	cin>>a[i];
+	max=a[0];
+	for(i=0;i<n;i++)
+	{
+		if (max<a[i]) swap(max,a[i]);
+	}
+	cout<<max<<endl;
+	return 0;
+}	
+
+2301:定义一个3行3列的二维整形数组，从键盘输入其中的9个数字，求其次对角线上数字的和。次对角线为矩阵右上角到左下角。
+
+1   2    3
+
+6   7    8
+
+10  12  13
+
+次对角线的和是:20
+#include <iostream>
+using namespace std;
+int main()
+{
+	int sum=0,a[3][3],i,j;
+	for (i=0;i<3;i++)
+		for(j=0;j<3;j++)
+			cin>>a[i][j];
+		for (i=0;i<3;i++)
+			sum=sum+a[i][3-i-1];
+		cout<<sum<<endl;
+		return 0;
+}
+2303:输入整数n，判断其是否为完数，是输出“yes”，不是输出“no”，完数的概念为一个数的所有小于其自身的因子之和等于该数字本身，如6，因子为1,2,3。1+2+3=6所以6为完数。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[100],n,sum=0,k=0,i;
+	cin>>n;
+	for (i=1;i<=n/2;i++)
+	{
+		if (n%i==0)
+		{
+			a[i]=i;
+			k++;
+		}
+	}
+	for (i=1;i<=k;i++)
+		sum=sum+a[i];
+	if (sum==n) cout<<"yes"<<endl;
+	else cout<<"no"<<endl;
+	return 0;
+}
+2304:输入一行字符，最多20个，以‘#’结尾，判断该行字符中是否存在数字。输出数字出现的次数。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int i,j=0;
+	char c;
+	for (;(c=getchar())!='#';)
+	{
+		if (c>='0'&&c<='9')  j++;
+	}
+	cout<<j<<endl;
+	return 0;
+}
+2312:定义一个5行5列的二维数组，输入初始值，找到其中的最小值和最大值并输出。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int max,min,a[5][5],i,j;
+	for(i=0;i<5;i++)
+		for(j=0;j<5;j++)
+			cin>>a[i][j];
+		max=a[0][0];
+		for(i=0;i<5;i++)
+		for(j=0;j<5;j++)
+			if (max<a[i][j]) swap(max,a[i][j]);
+        min=a[0][0];
+		for(i=0;i<5;i++)
+			for(j=0;j<5;j++)
+				if (min>a[i][j]) swap(min,a[i][j]);
+				cout<<min<<' '<<max<<' '<<endl;
+	return 0;
+}
+2318:输入数字n，计算1+1+2+1+2+3+1+2+3+4+。。。+1+2+3+4+。。。+n的结果。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,i,sum=0,k=0;
+	cin>>n;
+	for(i=1;i<=n;i++)
+	{
+		k=k+i;
+		sum=sum+k;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+2344:4.输入整数n，查找大于n的5个素数，并输出。素数是只能被1和本身整除的数。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[5],n,i,sum=0,k=0,j;
+	cin>>n;
+	for (i=n+1;;i++)
+	{
+		for(j=2;j<i;j++)
+			if (i%j==0)
+			{break;}
+			if (j==i){
+				a[k]=i;
+				k++;
+			}
+			if (k==5)
+				break;
+	}
+	for(i=0;i<5;i++)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+2345:5.输入10个整数，要求按照从小到大的顺序输出这10个数。
+#include <iostream>
+#include <cmath>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a[10],n,i,j;
+	for(i=0;i<10;i++)
+	cin>>a[i];
+	sort(a,a+10);
+	for(i=0;i<10;i++)
+	cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+2346:6.定义一个5行5列的二维数组，通过键盘输入其初始值。求该二维数组主对角线上数字的和。（主对角线为n行n列二维数组的左上角到右下角的数字）
+#include <iostream>
+using namespace std;
+int main()
+{
+	int sum=0,a[5][5],i,j;
+	for (i=0;i<5;i++)
+		for(j=0;j<5;j++)
+			cin>>a[i][j];
+		for (i=0;i<5;i++)
+			sum=sum+a[i][i];
+		cout<<sum<<endl;
+		return 0;
+}
+
+2347:7.输入一行字符，将其中的英文字母统一加密，前移四位，如a—w，b—x，E—A等。输出加密后的该行字符
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char c;
+	for(;(c=getchar())!='\n';)
+	{
+		if ((c>='a'&&c<='z')||(c>='A'&&c<='Z'))
+		{
+			c=c-4;
+			if ((c<'a'&&c>'Z')||(c<'A'))
+				c=c+26;
+		}
+		cout<<c;
+	}
+	cout<<endl;
+		return 0;
+}
+2349:附加1：输入一个整数，最多5位数，将其每一位上的数字按照从小到大的顺序输出。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[5]={9,9,9,9,9},n,i,j,k;
+	cin>>n;
+	i=0;
+	while (n!=0)
+	{
+		k=n%10;
+		a[i]=k;
+		i++;
+		n=n/10;
+	}
+	sort(a,a+5);
+	for(k=0;k<i;k++)
+		cout<<a[k];
+	cout<<endl;
+		return 0;
+}
+
+
+改进版：
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[5],n,i,j,k;
+	fill(a,a+5,9);
+	cin>>n;
+	i=0;
+	while (n!=0)
+	{
+		k=n%10;
+		a[i]=k;
+		i++;
+		n=n/10;
+	}
+	sort(a,a+5);
+	for(k=0;k<i;k++)
+		cout<<a[k];
+	cout<<endl;
+		return 0;
+}
+2376：编写程序，输入一个数字（大于10，小于100），判断其是否为素数，是输出“y”，不是则输出“n”
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,i;
+	cin>>n;
+	for(i=2;i<n;i++)
+		if (n%i==0)
+			break;
+		if (i==n) cout<<'y'<<endl;
+		else cout<<'n'<<endl;
+		return 0;
+}
+
+2391:输入一个整数n(1<n<=10)，再输入n个整数，将其逆序输出。输出的每一个数字后都有空格，最后回车换行。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,a[10],i,j;
+	cin>>n;
+	for(i=0;i<n;i++)
+		cin>>a[i];
+	for(j=0;j<n/2;j++)
+		swap(a[j],a[n-1-j]);
+	for(i=0;i<n;i++)
+		cout<<a[i]<<' ';
+	cout<<endl;
+		return 0;
+}
+
+2392:输入一个2行3列的矩阵，将其转换成3行2列的矩阵。输出的每一个数字后都有空格，每一行后都有回车换行
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[2][3],b[3][2],i,j;
+	for(i=0;i<2;i++)
+		for(j=0;j<3;j++){
+			cin>>a[i][j];}
+		for(i=0;i<2;i++)
+		for(j=0;j<3;j++)
+		{
+			b[j][i]=a[i][j];
+		}
+		for(i=0;i<3;i++){
+		for(j=0;j<2;j++)
+			cout<<b[i][j]<<' ';
+		cout<<endl;}
+		return 0;
+}
+
+
+2397:第四题 定义一个5行5列的数组，输入值，找到该数组主对角线（矩阵的左上到右下）上的数字中的最大值，并输出。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int sum=0,a[5][5],i,j,b[5],max;
+	for (i=0;i<5;i++)
+		for(j=0;j<5;j++)
+			cin>>a[i][j];
+		for (i=0;i<5;i++){
+			b[i]=a[i][i];}
+		max=b[0];
+		for(i=0;i<5;i++)
+			if(max<b[i]) swap(max,b[i]);
+		cout<<max<<endl;
+		return 0;
+}
+
+
+2398:第五题 输入一个整数，计算1+2+3+。。。+n的结果并输出，再计算n！并输出，然后判断输入的整数是否为素数（只能被1和自己整除的数字），是素数输出Y，不是则输出N。要求上述对数字的处理，分别使用不同的函数完成
+#include <iostream>
+using namespace std;
+int main()
+{
+	int he(int n);
+int jie(int n);
+char shu(int n);
+	int n,a[5][5],i,j,b[5],max;
+	cin>>n;
+	cout<<he(n)<<endl;
+	cout<<jie(n)<<endl;
+	cout<<shu(n)<<endl;
+		return 0;
+}
+int he(int n)
+{
+	int sum=0,i;
+	for(i=1;i<=n;i++)
+		sum=sum+i;
+	return sum;
+}
+int jie(int n)
+{
+	int sum=1,i;
+	for(i=1;i<=n;i++)
+		sum=sum*i;
+	return sum;
+}
+char shu(int n)
+{
+	int i;
+	for (i=2;i<n;i++)
+		if (n%i==0) break;
+		if (i==n) return 'Y';
+		else return 'N';
+}
+
+2400:选做题二 输入奇数n，输入对应图形如下。
+
+5
+
+*
+
+***
+
+*****
+
+***
+
+*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n,i,j;
+	cin>>n;
+	for(i=1;i<=n/2+1;i++)
+	{
+		for(j=1;j<=2*i-1;j++)
+			cout<<'*';
+			cout<<endl;
+	}
+	for(i=n/2;i>=1;i--)
+	{
+		for(j=1;j<=2*i-1;j++)
+			cout<<'*';
+			cout<<endl;
+	}
+	return 0;
+}
+
+2403第三题 输入一个整数，找到能整除这个数字的最大因子（不包含其本身）并输出。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i,n,k=0,a[100],max;
+	cin>>n;
+	for(i=n-1;;i--)
+	{
+		if (n%i==0){
+			cout<<i<<endl;
+			break;
+		}
+	}
+	return 0;
+}
+
+2440：输入两个整数n和m，从小到大，输出n和m（不包括n和m）间所有的素数，素数是只能被1和本身整除的整数。
+格式提醒，每个输出的数字后换行。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[100],m,n,i,sum=0,k=0,j;
+	cin>>n>>m;
+	for (i=n+1;i<m;i++)
+	{
+		for(j=2;j<i;j++)
+			if (i%j==0)
+			{break;}
+			if (j==i){
+				a[k]=i;
+				k++;
+			}
+	}
+	for(i=0;i<k;i++)
+		cout<<a[i]<<endl;
+	return 0;
+}
+
+2442：输入三位数字n，找到大于n的第一个水仙花数。水仙花数是指该数字的每一位上的数的立方和与这个数字相等的数。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[100],m,n,i,k,sum=0,j;
+	cin>>n;
+	for (m=n+1;;m++)
+	{
+		i=m/100;
+	j=m/10-i*10;
+	k=m%10;
+	if (m==i*i*i+j*j*j+k*k*k)
+	{cout<<m<<endl;break;}
+	}
+	return 0;
+}
+
+
+2443：输入数字n，输出如下图像。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int i,j,m=0,n,k;
+	cin>>n;
+	for(i=n;i>=1;i--)
+	{
+		for(k=1;k<=m;k++)
+		{
+			cout<<' ';
+		}
+		m++;
+		for(j=1;j<=2*i-1;j++)
+			cout<<'*';
+		cout<<endl;
+	}
+
+	return 0;
+}
+
+2445：输入整数n，计算如下表达式的结果。
+如输入6，则计算654321+54321+4321+321+21+1的结果。
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int n,sum=0,i,j=0,k;
+	cin>>n;
+	for(i=n;i>=1;i--)
+	{
+		j=0;
+		for(k=i;k>=1;k--)
+		{
+			j=j+k*pow(10,k-1);
+		}
+		sum=sum+j;
+		
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+2449：3. 输入一行字符，最多20个，统计期中英文字母的数量，并输出。
+格式提醒：答案输出一个整数，完成后回车换行。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[20],i,j,c=0;
+	for(i=0;i<20;i++)
+	{
+		a[i]=getchar();
+		if (a[i]=='\n') break;
+	}
+	for(j=0;j<=i;j++)
+	{
+		if ((a[j]>='a'&&a[j]<='z')||
+			(a[j]>='A'&&a[j]<='Z'))
+			c++;
+	}
+	cout<<c<<endl;
+	return 0;
+}
+2470：4. 输入5个整数，找到其中的最小值并输出。
+格式提醒：完成后回车换行。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[5],i,min=0;
+	for(i=0;i<5;i++)
+	{
+		cin>>a[i];
+	}
+	min=a[0];
+	for(i=0;i<5;i++)
+	{
+		if (a[i]<min) swap(a[i],min);
+	}
+	cout<<min<<endl;
+	return 0;
+}
+
+2471：5. 输入一行字符（最多20个），统计字符的个数并输出。
+格式提醒：输出完成后回车换行。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[20],i,j,c=0;
+	for(i=0;i<20;i++)
+	{
+		a[i]=getchar();
+		if (a[i]=='\n') break;
+	}
+	for(j=0;j<=i-1;j++)
+	{
+			c++;
+	}
+	cout<<c<<endl;
+	return 0;
+}
+
+2519：8.输入一行字符，以‘*’结束，统计这一行字符中，小写英文字母，大写英文字母，数字字符，其他字符的个数，并输出。
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	char a[100];
+	int k=0,i,j,xiao,da,shu,other;
+	xiao=da=shu=other=0;
+	for (i=0;;i++)
+	{
+		a[i]=getchar();
+		k++;
+		if (a[i]=='*') break;
+	}
+	for (i=0;i<k-1;i++)
+	{
+		if (a[i]>='a'&&a[i]<='z') xiao++;
+		else if (a[i]>='A'&&a[i]<='Z') da++;
+		else if (a[i]>='0'&&a[i]<='9') shu++;
+		else other++;
+	}
+	cout<<xiao<<' '<<da<<' '<<shu<<' '<<other<<endl;
+	return 0;
+}
+
+2520：9.输入数字n，输出如下图形
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	int a,j,n,k,i;
+	cin>>n;
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=i;j++)
+			cout<<'*';
+		cout<<endl;
+	}
+	return 0;
+}
+
+
+2521：10.输入三个整数，分别代表年、月、日，计算该日期是该年的第几天。注意闰年二月是29天。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[12]={0,31,28,31,30,31,30,31,31,30,31,30};
+		int i,j,k,n,m,sum=0;
+	cin>>k>>n>>m;
+	for(i=0;i<n;i++)
+	{
+		sum=sum+a[i];
+	}
+	if ((k%4==0)&&(k%100!=0)||(k%400==0))
+		if (n>2)
+		m=m+1;
+	cout<<sum+m<<endl;
+	return 0;
+}
+
+2533：5.输入一行字符，以‘#结尾’，最多10个，之后再输入一个字符，在输入的一行字符中查找后输入的那个字符，输出该字符在之前输入的字符中出现的次数，没有则输出0.
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[20],q;
+		int k=0,i,j,c=0;
+	for(i=0;i<20;i++)
+	{
+		a[i]=getchar();
+		if (a[i]=='#') break;
+		k++;
+	}
+	cin>>q;
+	for(j=0;j<=k;j++)
+	{
+		if (a[j]==q) c++;
+	}
+	cout<<c<<endl;
+	return 0;
+}
+
+2536：8．输入一行字符最多10个，以#号结尾，将其中的大写字母变为小写字母输出。
+#include <iostream>
+#include <string>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[20],q;
+		int k=0,i,j,c=0;
+	for(i=0;i<20;i++)
+	{
+		a[i]=getchar();
+		if (a[i]=='#') break;
+		k++;
+	}
+	for(j=0;j<k;j++)
+	{
+		if (a[j]>='A'&&a[j]<='Z') a[j]=a[j]+32;
+	}
+	for(i=0;i<k;i++)
+		cout<<a[i];
+	return 0;
+}
+
+2545：输入一个整数，找到能整除这个数字的最大因子（不包含其本身）并输出。
+#include <iostream>
+#include <string>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,i,j;
+	cin>>n;
+	for (i=n-1;;i--)
+	{
+		if (n%i==0) {cout<<i<<endl;break;}
+	}
+	return 0;
+}
+
+2548：从键盘输入字符串（最多30个），之后再输入单个字符，将字符串s中所有ch字符删除掉，然后输出新的字符串。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[20],q;
+		int k=0,i,j,c=0;
+	for(i=0;i<30;i++)
+	{
+		a[i]=getchar();
+		if (a[i]=='\n') break;
+		k++;
+	}
+	cin>>q;
+	for(j=0;j<=k;j++)
+	{
+		if (a[j]==q) a[j]='\0';
+	}
+	for(j=0;j<=k;j++)
+	{	
+		if (a[j]=='\0') continue;
+		else cout<<a[j];
+	}
+
+	return 0;
+}
+2549：输入1个整数n输出大于n的第一个素数。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[5],n,i,sum=0,k=0,j;
+	cin>>n;
+	for (i=n+1;;i++)
+	{
+		for(j=2;j<i;j++)
+			if (i%j==0)
+			{break;}
+			if (j==i){
+			cout<<i<<endl;
+			break;
+			}
+	}
+	return 0;
+}
+
+2554：数列求和，输入整数n，输出1+1*2+...+1*2*3*...*n的值，编程输出该数列的和。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a=1,n,i,sum=0,k=0,j;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		a=a*i;
+		sum=sum+a;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2600：输入一个正整数n，计算1-3+5-7…(<=n)的结果，并输出。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int i,sum=0,n,m,s=1;
+	cin>>n;
+	for (i=1;i<=n;i+=2)
+	{
+		m=i*s;
+		sum=sum+m;
+		s=-s;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+2601： 输入1个正整数n，计算1！+3！+5！+...+k!（k<=n），并输出结果。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int i,sum=0,n,m=1;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		m=m*i;
+		if (i%2==1)
+		sum=sum+m;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2604： 先输入1个字符m，先输入一个整数n，输入n个字符（没有空格，n<=40），输出m在n个字符中出现的个数。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[20],q;
+		int k=0,n,i,j,c=0;
+		cin>>q;
+		cin>>n;
+	for(i=0;i<n;i++)
+	{
+		a[i]=getchar();
+		if (a[i]!='\n')
+		k++;
+	}
+	for(j=0;j<k;j++)
+	{
+		if (a[j]==q) c++;
+	}
+	cout<<c<<endl;
+	return 0;
+}
+
+2605：鸡兔同笼问题：输入两个正整数n，m；n代表头的个数，m为脚的个数；问有多少只兔，有多少只鸡。（注意两个数之间有空格）
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i,j,n,m;
+	cin>>n>>m;
+	for (i=0;i<=n;i++)
+		for(j=0;j<=n;j++){
+			if ((i+j==n)&&
+				(i*2+j*4==m))
+				cout<<j<<' '<<i<<' '
+				<<endl;
+		}
+	return 0;
+}
+
+2606： 输入一个正整数N，输出如下形。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int i,j,m=0,n,k;
+	cin>>n;
+	for(i=1;i<=n;i++)
+	{
+		for(k=1;k<=n-i;k++)
+		{
+			cout<<' ';
+		}
+		for(j=1;j<=2*i-1;j++)
+			cout<<'*';
+		cout<<endl;
+	}
+
+	return 0;
+}
+
+
+2609：输入两个正整数n和m，n的范围为1到9，m的范围为1到5，计算n+nn+nnn+nnnn…最后一项为m个n。注意每一项是一个数字，不是若干个n相乘。输出最终运算结果。
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int n,sum=0,i,m,j=0,k;
+	cin>>n>>m;
+	k=n;
+	for(i=1;i<=m;i++)
+	{
+		sum=sum+n;
+		n=n*10+k;
+		
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2610： 输入一个最大为5位数的整数，将这一整数的每一个位数上的数字，按照先高位后低位的顺序输出，每一位上的数字输出时，之间用一个空格隔开。（注意：最后一个数字后面也有空格）
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[5],n,i,j,k;
+	fill(a,a+5,9);
+	cin>>n;
+	i=0;
+	while (n!=0)
+	{
+		k=n%10;
+		a[i]=k;
+		i++;
+		n=n/10;
+	}
+	for(k=i-1;k>=0;k--)
+		cout<<a[k]<<' ';
+	cout<<endl;
+		return 0;
+}
+2632：4.输入一行字符，以‘#’为结束标记，统计其中的英文字母、数字字符的数量，并输出。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[26]={'A','B','C','D','E','F','G','H','I'
+		,'J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+	int i,j,k,n,q;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		for (j=1;j<=n-i;j++)
+			cout<<' ';
+		q=0;
+		for (k=0;k<2*i-1;k++)
+		{
+			cout<<a[q];
+			if (a[q]=='Z') q=-1;
+			q++;
+		}
+		cout<<endl;
+	}
+		return 0;
+}
+
+2676：输入一个字符串，以回车为结束标记，将该字符串逆序输出。
+#include<iostream>
+#include<stdio.h>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	char a[100],c;
+	int i,j,k;
+	for (i=0;(c=getchar())!='\n';i++)
+	{
+		a[i]=c;
+	}
+	for (k=0;k<i/2;k++)
+	{
+		swap(a[k],a[i-1-k]);
+	}
+	for (j=0;j<i;j++)
+		cout<<a[j];
+	cout<<endl;
+	return 0;
+}
+
+（另一种）
+#include<iostream>
+#include<stdio.h>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	char a[100],c;
+	int i,j;
+	for (i=0;(c=getchar())!='\n';i++)
+	{
+		a[i]=c;
+	}
+	for (j=i-1;j>=0;j--)
+		cout<<a[j];
+	cout<<endl;
+	return 0;
+}
+
+
+
+2701：输入10个整数，使用冒泡排序按照从小到大的顺序输出这些数字。并输出在排序过程中发生交换的次数。
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int a[10],n,i,j,k=0;
+	for(i=0;i<10;i++)
+	cin>>a[i];
+	for(i=0;i<9;i++)
+	{
+		for (j=i;j<10;j++)
+			if (a[i]>a[j]){swap(a[i],a[j]);k++;}
+	}
+	for(i=0;i<10;i++)
+	cout<<a[i]<<' ';
+	cout<<endl<<k<<endl;
+	return 0;
+}
+
+2702:输入一行字符（至多20个）以‘#’结尾，将其逆序输出。注意，字符中包含空格等非英文符号。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[20];
+	int i=0,j;
+	while (a[i]=getchar())
+	{
+		if (a[i]=='#') break;
+		i++;
+	}
+	for (j=i-1;j>=0;j--)
+		cout<<a[j];
+	cout<<endl;
+	return 0;
+}
+
+2706:输入整数n（n<=5），在输入n行n列数据，对这个二维数组中所有的数字进行从小到大的排序。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[5][5],b[25],n,i=0,j,k=0;
+	cin>>n;
+	for (i=0;i<n;i++)
+		for (j=0;j<n;j++)
+			cin>>a[i][j];
+	for (i=0;i<n;i++)
+		for (j=0;j<n;j++){
+			b[k]=a[i][j];k++;}
+		sort (b,b+(n*n));
+		k=0;
+	for (i=0;i<n;i++)
+	{
+		for (j=0;j<n;j++){
+			a[i][j]=b[k];
+			k++;}
+		if (k==n*n+1) break;
+	}
+	for (i=0;i<n;i++){
+		for (j=0;j<n;j++)
+			cout<<a[i][j]<<' ';
+		cout<<endl;}
+	return 0;
+}
+
+2708:     Mr Gao and Mr Wang led 5 students to prepare for the test. Each teacher has 5 student-number,and they had arranged well from small to large. Note that there is no repetition of the school number.
+     Now, these two groups of students will enter the same examination room, all students need to order from small to large with the student-number, please put them in line, and output.
+
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[10];
+	int i;
+	for (i=0;i<10;i++)
+		cin>>a[i];
+	sort(a,a+10);
+	for (i=0;i<10;i++)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+
+2731:
+第一题：
+输入两个整数a和b，再输入一个整数c，判断整数c是否是整数a和b的公约数，是则输出y，不是则输出n。
+
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int i,j,n,m;
+	cin>>n>>m;
+	cin>>j;
+	if (n%j==0&&m%j==0) cout<<"y"<<endl;
+	else cout<<"n"<<endl;
+	return 0;
+}
+
+2732
+第二题：
+输入一个字符，判断其种类，如果是小写英文字母，则输出“xx”，如果是大写英文字母，则输出“dx”，如果是数字字符，则输出“sz”，如果上述种类都不是，则输出“qt”。.
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char c;
+	c=getchar();
+	if (c>='a'&&c<='z') cout<<"xx"<<endl;
+	else if (c>='A'&&c<='Z') cout<<"dx"<<endl;
+	else if (c>='0'&&c<='9') cout<<"sz"<<endl;
+	else cout<<"qt"<<endl;
+	return 0;
+}
+
+2734:
+第四题：
+按照先后顺序，输入两个日期，包括月份和日子，计算这两个日期之间差多少天，不考虑闰年。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[12]={0,31,28,31,30,31,30,31,31,30,31,30},n,m,i,j,sum=0,qiu=0,q,w;
+	cin>>n>>m;
+	cin>>q>>w;
+	for (i=0;i<n;i++)
+		sum=sum+a[i];
+	sum=sum+m;
+	for (j=0;j<q;j++)
+		qiu=qiu+a[j];
+	qiu=qiu+w;
+	cout<<qiu-sum<<endl;
+	return 0;
+}
+
+
+2735:第五题：
+某城市新开地铁，计价方式为按照经过的站点数量计价。具体标准为，1-4站基本价2元，超过4站，5-9站，每站加收0.5元，超过9站，10-19站，每站加收0.3元，超过19站，20站及以上，每站加收0.2元。输入两站之间经过的站点数，按照上述标准，计算并输出地铁票价。结果保留两位小数。
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	float a[3]={2,4.5,7.5,};
+	int i,j,n;
+	float sum;
+	cin>>n;
+	if (n<=4&&n>=1) sum=2;
+	else if (n>4&&n<=9) sum=a[0]+(n-4)*0.5;
+    else if (n>9&&n<=19) sum=a[1]+(n-9)*0.3;
+	else sum=a[2]+(n-19)*0.2;
+	cout<<setiosflags(ios::fixed)<<setprecision(2)
+		<<sum<<endl;
+	return 0;
+}
+
+2738:
+第八题：
+输入数字n（n<=26），按照以下规则，输出图形。
+当n为3时
+A
+AB
+ABC
+当n为4时
+A
+AB
+ABC
+ABCD
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	char a[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+	int i,n,k,j;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{k=0;
+	for (j=1;j<=i;j++){
+		cout<<a[k];k++;
+		if (a[k]=='Z') k=0;}cout<<endl;
+	}
+	return 0;
+}
+
+2739输入整数n，输出大于n的第一个完数。完数为所有因子之和与其相等的数，如6=1+2+3。
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int a[10],i,n,k=0,j,sum=0;
+	cin>>n;
+	for (i=n+1;;i++)
+	{sum=0;
+		for (j=1;j<i;j++){
+			if (i%j==0)
+				sum=sum+j;}
+			if (i==sum)
+			{
+				cout<<i<<endl;
+				break;
+			}
+	}
+	return 0;
+}
+
+
+lingxin:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int i,n,j,k;
+	cin>>n;
+	for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	for (i=1;i<n;i++)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+	for (i=n-2;i>=1;i--)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+		for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	return 0;
+}
+
+任意个数：
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int qiu(int n);
+	int n,j,i;
+	cin>>n>>j;
+		for (i=1;i<=n;i++)
+	{
+		qiu (j);
+		cout<<endl;
+	}
+	return 0;
+}
+int qiu(int n)
+{
+	
+	int i,j,k;
+	for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	for (i=1;i<n;i++)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+	for (i=n-2;i>=1;i--)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+		for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	return 0;
+}
+
+n代表双层含义：
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int qiu(int n);
+	int n,j,i;
+	cin>>n;
+		for (i=1;i<=n;i++)
+	{
+		qiu (n);
+		cout<<endl;
+	}
+	return 0;
+}
+int qiu(int n)
+{
+	
+	int i,j,k;
+	for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	for (i=1;i<n;i++)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+	for (i=n-2;i>=1;i--)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+		for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	return 0;
+}
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int qiu(int n);
+	int n,j,i;
+	cin>>n;
+		for (i=1;i<=n;i++)
+	{
+		qiu (n);
+		cout<<endl;
+	}
+	return 0;
+}
+int qiu(int n)
+{
+	
+	int i,j,k;
+	for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	for (i=1;i<n;i++)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+	for (i=n-2;i>=1;i--)
+	{
+		for (k=1;k<=n-i;k++)
+			cout<<' ';
+		cout<<"*";
+		for (j=1;j<=2*i-1;j++)
+			cout<<' ';
+		cout<<"*"<<endl;
+	}
+		for (i=0;i<n;i++)
+		cout<<' ';
+	cout<<"*"<<endl;
+	return 0;
+}
+
+
+2740：输入一行字符，将其中的所有英文字符加密后输出，加密规则为A变为Z（a变为z），B变为Y（b变为y），以此类推，非英文字符不变。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char c;
+	int i,j;
+	for (;(c=getchar())!='\n';)
+	{
+		if (c>='a'&&c<='z') c='a'+'z'-c;
+		if (c>='A'&&c<='Z') c='A'+'Z'-c;
+		cout<<c;
+	}
+	cout<<endl;
+	return 0;
+}
+
+
+2750：输入10个整数，找到其中的最小值与最大值，并输出。
+#include <iostream>
+#include <cmath>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a[10],n,i,j;
+	for(i=0;i<10;i++)
+	cin>>a[i];
+	sort(a,a+10);
+	cout<<a[0]<<' '<<a[9];
+	cout<<endl;
+	return 0;
+}
+
+2752：输入整数n，再输入n个整数（n<=10），再输入整数m，统计并输出整数m在之前输入的n个整数中出现的次数。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+		int a[10],k=0,n,i,j,c=0,m;
+		cin>>n;
+	for(i=0;i<n;i++)
+	{
+		cin>>a[i];
+	}
+	cin>>m;
+	for(j=0;j<n;j++)
+	{
+		if (a[j]==m) c++;
+	}
+	cout<<c<<endl;
+	return 0;
+}
+
+2753：定义一个四行四列的二维数组，对其赋值，判断此二维数组是否上下对称。（第一行和最后一行相同，第二行和第三行相同）。是则输出‘y’，不是则输出‘n’。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[4][4],i,j;
+	bool flag=true;
+	for (i=0;i<4;i++)
+		for (j=0;j<4;j++)
+			cin>>a[i][j];
+		for (i=0;i<2;i++){
+			for (j=0;j<4;j++)
+			{
+				if (a[i][j]!=a[3-i][j]){
+					flag=false; break;}
+			}
+			if (flag==false) break;
+		}
+		if (flag) cout<<"y"<<endl;
+		else cout<<"n"<<endl;
+		return 0;
+}
+
+2754：输入一个数字，判断其是否为素数（只能被1和本身整除的数字），是则输出‘y’，不是则输出‘n’。注意，要求使用函数。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int qiu(int n);
+	int n;
+	cin>>n;
+	if (qiu(n)) cout<<"y"<<endl;
+	else cout<<"n"<<endl;
+	return 0;
+}
+int qiu(int n)
+{
+	int i;
+	for (i=2;i<n;i++)
+	{
+		if (n%i==0) break;
+	}
+	if (i==n) return 1;
+	else return 0;
+}
+
+
+2772：定义一个三行四列的二维字符数组，并通过键盘给其赋值。之后输入整数n（0<=n<=11），输出该二维数组的第n个字符。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[3][4],n,i,j,k;
+	for (i=0;i<3;i++)
+		for (j=0;j<4;j++)
+			cin>>a[i][j];
+		cin>>n;
+		k=1;
+		for (i=0;i<3;i++){
+		for (j=0;j<4;j++)
+		{
+			if (k==n) {
+				cout<<a[i][j]<<endl;break;}
+			else k++;
+		}
+		if (k==n) break;
+		}
+	return 0;
+}
+
+2775：输入数字n(n<=20)，按照如下规律输出图形：
+n=1;
+A
+n=2;
+ A
+AB
+n=3;
+  A
+ AB
+ABC
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	char a[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+	int i,n,k,j,q;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		for (q=1;q<=n-i;q++)
+			cout<<' ';
+		k=0;
+	for (j=1;j<=i;j++){
+		cout<<a[k];k++;
+		if (a[k]=='Z') k=0;}cout<<endl;
+	}
+	return 0;
+}
+
+2779：输入10个整数，对这10个数字进行从大到小的排序后输出。
+格式提醒：每个输出的数字之后都有一个空格，最后回车换行。
+#include <iostream>
+#include <cmath>
+#include<algorithm>
+using namespace std;
+bool cmp(int a,int b)
+{
+  return a>b;
+}
+int main()
+{
+	int a[10],n,i,j;
+	for(i=0;i<10;i++)
+	cin>>a[i];
+	sort(a,a+10,cmp);
+	for(i=0;i<10;i++)
+	cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+2789：数列求和，输入整数n，输出1+1+2+...+1+2+3+...+n，最后一项有n个2，编程输出该数列的和。
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,sum=0,k=0,i;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		k=k+i;
+		sum=sum+k;
+	}
+	cout<<sum<<endl;
+	return 0;
+}
+
+2818：8.输入一个日期，包括年月日，判断该年还剩余多少天（不包括输入日期的这一天，注意闰年），输入顺序为年月日。
+输出格式提醒：注意只输出天数，不要输出其他内容。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[12]={0,31,28,31,30,31,30,31,31,30,31,30};
+		int i,j,k,n,m,sum=0;
+	cin>>k>>n>>m;
+	for(i=0;i<n;i++)
+	{
+		sum=sum+a[i];
+	}
+	m=m+sum;
+	if ((k%4==0)&&(k%100!=0)||(k%400==0))
+	{	if (n>2){
+		m=m+1;
+		m=366-m;}
+	else m=366-m;
+	}
+	else m=365-m;
+	cout<<m<<endl;
+	return 0;
+}
+
+
+2819：9.输入整数n和m（3<n<m<20），输出菲波那切数列的第n到第m项。菲波那切数列为1 1 2 3…（头两项的值为1，第三项开始，每一项的值是其前两项的和）。
+输出格式提醒：输出的斐波那契数列的每一个数字后面都有空格（包括最后一个），然后输出回车换行
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[100]={1,1},i;
+	int n,m;
+	cin>>n>>m;
+	for (i=2;i<100;i++)
+	{
+		a[i]=a[i-1]+a[i-2];
+	}
+	for (i=n;i<=m;i++)
+	{
+		cout<<a[i-1]<<' ';
+	}
+	cout<<endl;
+	return 0;
+}
+
+
+
+
+2820：
+10.输入一个整数n，根据n的值输出如下图形：
+当n=3
+*****
+ ***
+  *
+当n=4
+*******
+ *****
+  ***
+   *
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,i,j,k;
+	cin>>n;
+	for (i=0;i<n;i++)
+	{
+		for (j=0;j<i;j++)
+			cout<<' ';
+		for (k=2*(n-i)-1;k>=1;k--)
+			cout<<'$';
+		cout<<endl;
+	}
+	return 0;
+}
+
+
+2837：1.       输入正整数n（n大于1，小于等于10），再输入n个整数，再输入一个整数m，编写程序查找并输出整数m在之前的n个整数中出现的次数。
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[10],i,j,n,k=0;
+	cin>>n;
+	for (i=0;i<n;i++)
+		cin>>a[i];
+	cin>>j;
+	for (i=0;i<n;i++)
+	{
+		if (a[i]==j) k++;
+	}
+	cout<<k<<endl;
+	return 0;
+}
+
+2841：5.输入一行大写英文字符，最多30个，输出A-Z字符的个数。没有则为0个。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char c,a[30],q[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+	int b[30]={0},i;
+	for (i=0;i<30;i++)
+	{
+		c=getchar();
+		if (c=='\n') break;
+		if (c=='A') b[0]++;
+		if (c=='B') b[1]++;
+		if (c=='C') b[2]++;
+		if (c=='D') b[3]++;
+		if (c=='E') b[4]++;
+		if (c=='F') b[5]++;
+		if (c=='G') b[6]++;
+		if (c=='H') b[7]++;
+		if (c=='I') b[8]++;
+		if (c=='J') b[9]++;
+		if (c=='K') b[10]++;
+		if (c=='L') b[11]++;
+		if (c=='M') b[12]++;
+		if (c=='N') b[13]++;
+		if (c=='O') b[14]++;
+		if (c=='P') b[15]++;
+		if (c=='Q') b[16]++;
+		if (c=='R') b[17]++;
+		if (c=='S') b[18]++;
+		if (c=='T') b[19]++;
+		if (c=='U') b[20]++;
+		if (c=='V') b[21]++;
+		if (c=='W') b[22]++;
+		if (c=='X') b[23]++;
+		if (c=='Y') b[24]++;
+		if (c=='Z') b[25]++;
+	}
+	for (i=0;i<26;i++)
+	{
+		cout<<q[i]<<' '<<b[i]<<endl;
+	}
+	return 0;
+}
+
+
+China
+British
+France
+India
+America
+
+
+3192：第二题
+
+输入一个数字，判断其是否为逆序数（各个数位上的数字，正序和逆序都一样的整数），是则输出“yes”，不是则输出“no”。
+
+格式提醒：
+
+输入一个整数。
+
+输出字符串“yes”或者“no”
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n,sum=0,k,i;
+	cin>>n;
+	k=n;
+	while (n!=0)
+	{
+		i=n%10;
+		sum=sum*10+i;
+		n=n/10;
+	}
+	if (sum==k) cout<<"yes"<<endl;
+	else cout<<"no"<<endl;
+	return 0;
+}
+
+
+
+
+
+
+
+3196：第六题
+
+输入一行字符（大于3个字符），找出其中是否有abc这个单词，注意本题要求不得使用数组。
+
+格式提醒：
+
+输入一行字符。
+
+输出“yes”或者“no”。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[10];
+	int i,k;
+	for (i=0;;i++)
+	{
+		a[i]=getchar();
+		if (a[i]=='\n') break;
+	}
+	k=i;
+	for (i=0;i<k;i++)
+	{
+		if (a[i]=='a')
+			if (a[i+1]=='b')
+				if (a[i+2]=='c')
+				{cout<<"yes"<<endl;break;}
+	}
+	if (i==k) cout<<"no"<<endl;
+	return 0;
+}
+天数：
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+	int i,j,n,sum=0;
+	cin>>n;
+	for (i=0;;i++)
+	{
+		sum=sum+a[i];
+		if (sum>=n) break;
+	}
+	cout<<i+1<<endl;
+	return 0;
+}
+
+输出**：
+#include<iostream>
+using namespace std;
+int sushu(int n);
+int main()
+{
+	int n,j,k,i;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		for (j=1;j<=n-i;j++)
+			cout<<' ';
+		for (k=1;k<=2*i-1;k++)
+		{
+			if (k==1||k==2*i-1) cout<<'*';
+			else cout<<' ';
+		}
+		cout<<endl;
+	}
+	for (i=n-1;i>=1;i--)
+	{
+		for (j=1;j<=n-i;j++)
+			cout<<' ';
+		for (k=1;k<=2*i-1;k++)
+		{
+			if (k==1||k==2*i-1) cout<<'*';
+			else cout<<' ';
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	bool pan(int n);
+	int n,i;
+	cin>>n;
+	for (i=2;i<n/2;i++)
+	{
+		if (pan(i)&&pan(n-i)){ cout<<i<<' '<<n-i<<endl;break;}
+	}
+	return 0;
+}
+bool pan(int n)
+{
+	int i;
+	bool flag=true;
+	for (i=2;i<n;i++)
+	{
+		if (n%i==0) 
+		{
+			flag=false;
+				break;
+		}
+	}
+	if (i==n) flag=true;
+	return flag;
+}
+
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char c;
+	int i=0,big,small,digit,other,space;
+	big=small=digit=other=space=0;
+	for (;(c=getchar())!='\n';)
+	{
+		if (c>='a'&&c<='z') small++;
+		else if (c>='A'&&c<='Z') big++;
+		else if (c==' ') space++;
+		else if (c>='0'&&c<='9') digit++;
+		else other++;
+	}
+	cout<<small<<' '<<big<<' '<<digit<<' '<<space<<' '<<other<<endl;
+	return 0;
+}
+
+
+找时间顺序：
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[9];
+	int i,j,sum1,sum2,sum3,k,h;
+		cin>>h>>j>>k;
+	sum1=h*3600+j*60+k;
+		cin>>h>>j>>k;
+    sum2=h*3600+j*60+k;
+		cin>>h>>j>>k;
+    sum3=h*3600+j*60+k;
+	if (sum1<sum2) swap(sum1,sum2);
+	if (sum1<sum3) swap(sum1,sum3);
+	if (sum2<sum3) swap(sum2,sum3);
+	cout<<sum3/3600<<':'<<sum3%3600/60<<':'<<
+		sum3%60<<endl;
+		cout<<sum2/3600<<':'<<sum2%3600/60<<':'<<
+		sum2%60<<endl;
+		cout<<sum1/3600<<':'<<(sum1%3600)/60<<':'<<
+		sum1%60<<endl;
+	return 0;
+}
+
+2884：
+8. 输入整数n（n大于3，小于等于10），按照如下规律填充二维数组。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[10][10];
+	int n,i,j,m=1,k;
+	cin>>n;
+	for (i=0;i<n;i++)
+	{
+		k=m;
+		for (j=0;j<n;j++)
+		{
+			a[i][j]=k;
+			k++;
+		}
+		m++;
+	}
+	for (i=0;i<n;i++){
+		for (j=0;j<n;j++)
+			cout<<a[i][j]<<' ';
+		cout<<endl;}
+	return 0;
+}
+
+2856：3. 输入整数n，按照从小到大的顺序，输出小于n的所有的素数（注意包括1在内）。
+
+格式提醒：
+
+   输入：一个整数。
+
+   输出：小于n的每个素数，后面加空格。
+
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a[100],i,j,k=0,n;
+	cin>>n;
+	for (i=n-1;i>=1;i--)
+	{
+		for (j=2;j<i;j++)
+			if (i%j==0)
+				break;
+			if (i==j)
+			{
+				  a[k++]=i;
+			}
+	}
+	a[k]=1;
+	for (i=k;i>=0;i--)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	return 0;
+}
+
+3199：输入数字n，找到小于n的相邻两个差距最大的素数，（如果差相同，则输出数字较小的那一组）。
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,sum1,sum2,a=3,b=2,c=1,i,j;
+	cin>>n;
+	for (i=3;i<n;i++)
+	{	c=a-b;
+		for (j=2;j<i;j++)
+			if (i%j==0) break;
+			if (j==i)
+			{ 
+				if ((i-a)>c)
+			{
+				sum1=i;sum2=a;
+			}
+	      	  b=a;
+			  a=i;  
+			}
+	}
+	cout<<sum2<<' '<<sum1<<endl;
+	return 0;
+}
+
+
+2857：4. 一行字符（最多10个）以*号结尾（不包含空格），将这若干个字符按照asc码从小到大输出（不包括*号）。
+
+格式提醒：
+
+   输入：一行字符，以*号结尾。
+
+   输出：排序后的字符，要求连续输出。最后回车换行。
+
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	char a[100];
+	int b,c,n,i,j,k;
+	for (i=0;;i++)
+	{
+		a[i]=getchar();
+		if (a[i]=='*') break;
+	}
+	sort(a,a+i);
+	for (j=0;j<i;j++)
+		cout<<a[j];
+	cout<<endl;
+	return 0;
+}
+
+2910：输入数字n输出如下图形：
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n,i,j;
+	cin>>n;
+	for (i=1;i<=n;i++){
+		for (j=1;j<=i;j++)
+			cout<<'*';
+		cout<<endl;
+	}
+	return 0;
+}
+
+
+2915：10.已知一只公鸡5元，一只母鸡3元，三只小鸡一元，现有100元，需要购买100只鸡，请按照公鸡只数递增的顺序给出可行的方案，输出公鸡、母鸡、小鸡的只数。
+
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int a,b,c;
+	for (a=0;a<100;a++)
+		for (b=0;b<100;b++)
+			for (c=0;c<100;c+=3)
+			{
+				if ((a+b+c==100)&&(a*5+b*3+c/3==100))
+					cout<<a<<' '<<b<<' '<<c<<endl;
+				
+			}
+	return 0;
+}
+大树相乘：
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string g, h;
+	char a[500], b[500];
+	int d = 0, e = 0, a1 = 0, b1 = 0, c[500] = { 0 };
+	cin >> g >> h;
+	a1 = g.size();
+	b1 = h.size();
+	for (d = a1 - 1; d >= 0; d--)
+	{
+		a[a1 - d - 1] = g[d];
+	}
+	for (d = b1 - 1; d >= 0; d--)
+	{
+		b[b1 - d - 1] = h[d];
+	}
+	for (d = 0; d < a1; d++)
+	{
+		for (e = 0; e < b1; e++)
+		{
+			c[d + e] = c[d + e] + (((a[d] - 48) * (b[e] - 48)) % 10);
+			c[d + e + 1] = c[d + e + 1] + ((((a[d] - 48) * (b[e] - 48)) / 10));
+		}
+	}
+	for (d = a1 + b1 - 2; d >= 0; d--)
+	{
+		cout << c[d];
+	}
+	cout << endl;
+	return 0;
+}
+//交换指针位置 ，交换指针指向的值i；
+#include <iostream>
+using namespace std;
+int main()
+{
+	void swap(int* x, int* y);
+	int a, b;
+	int* x, * y;
+	cin >> a >> b;
+	x = &a; y = &b;
+	if (a, b)
+		swap(x, y);
+	else
+		cout << *x << ' ' << *y << endl;
+	return 0;
+}
+void swap(int* x, int* y)
+{
+
+		int temp;
+		temp =*x;
+		*x = *y;
+		*y = temp;
+		cout << *x << ' ' << *y << endl;
+}
+
+
+////有n个人围成一圈，顺序排号。从第1个人
+//开始报数（从1报到3），凡是报到3的人退出圈子
+//，问最后留下来的人原来排在几号。
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[100];
+	int n,i=0, j=0, k=0,m=0,q=0;
+	cin >> n;
+	for (i = 0; i < n; i++)
+	{
+		a[i] =++j;
+	}
+	j = 0;
+	while (1)
+	{
+		k = 0;
+		for (i = 0; i < n; i++)
+		{
+			if (a[i] > 0) k++;
+
+		}
+		if (k > 1)
+		{
+			for (i = 0; i < n; i++)
+			{
+				if (a[i] != 0)
+				{
+					j++;
+
+					if (j % 3 == 0)
+					{
+						cout << j << ' ';
+						a[i] = 0;
+					}
+				}
+			}
+		}
+		else
+		{
+			for (i = 0; i < n; i++)
+			{
+				if (a[i] > 0) cout << i+1 << endl;
+				m = 1;
+			}
+		}
+		if (m == 1) break;
+	}
+	return 0;
+	
+}
+
+
+//有一个班4个学生，5门课。
+//第一问：求第一门课的平均分；
+//第二问：找出有两门以上课程不及格的学生，输出他们的学号和全部课程成绩和平均成绩；第三问：找到平均成绩在90分以上或全部课程成绩在85分以上的学生。
+//
+//输入一个字符串，内有数字和非数字字符，如a123x456 17960 ? 302tab5876，将其中连续的数字作为一个整数，依次存放到一数组a中。
+//例如，123放入a[0]，456放入a[1]…，统计共有多少个整数，并输出这些数。
+#include <iostream>
+using namespace std;
+double average(double(*p)[5]);
+void NO(string* q, double(*p)[5]);
+void output(string* q, double(*p)[5], int n);
+void excellent(string* q, double(*p)[5]);
+int main()
+{
+	string student[4];
+	double score[4][5];
+	for (int i = 0; i < 4; i++)
+	{
+		cin >> student[i];
+		for (int j = 0; j < 5; j++)
+			cin >> score[i][j];
+	}
+	cout << average(score) << ' ';
+	NO(student, score);
+	excellent(student, score);
+}
+double average(double (*p)[5])
+{
+	double sum = 0.0;
+	for (int i = 0; i < 4; i++)
+	{
+		sum = sum + *(*(p + i));
+	}
+	return sum / 4;
+}
+void NO(string* q, double(*p)[5])
+{
+	for (int i = 0; i < 4; i++)
+	{
+		int k = 0;
+		for (int j = 0; j < 5; j++)
+			if (*(*(p + i) + j) < 60) k++;
+		if (k >= 2)
+			output(q, p,i);
+	}
+}
+void output(string* q, double(*p)[5],int n)
+{
+	double sum = 0;
+	cout << *p[n] << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << *(*(p + n) + i) << ' ';
+		sum = sum + *(*(p + n) + i);
+	}
+	cout << sum / 5;
+	cout << endl;
+}
+void excellent(string *q, double(*p)[5])
+{
+	cout << "平均成绩在90以上的学生：" << endl;
+	for (int i = 0; i < 4; i++)
+	{
+		int sum = 0;
+		for (int j = 0; j < 5; j++)
+		{
+			sum = sum + *(*(p + i) + j);
+		}
+		if (sum / 5 > 90) cout <<*(q+i) << ' ';
+	}
+	cout << endl << "全部课程成绩在85分以上的学生:" << endl;
+	for (int i = 0; i < 4; i++)
+	{
+		int k = 0;
+		for (int j=0;j<5;j++)
+		{
+			if (*(*(p + i) + j) > 85) k++;
+		}
+		if (k == 5) cout << *(q + i)<<' ';
+	}
+	cout << endl;
+}
+
+
+//输入一个字符串，内有数字和非数字字符，如a123x456 17960 ? 302tab5876，将其中连续的数字作为一个整数，依次存放到一数组a中。
+//例如，123放入a[0]，456放入a[1]…，统计共有多少个整数，并输出这些数。
+#include <iostream>
+using namespace std;
+int main()
+{
+	char a[100];
+	gets_s(a);
+	int i = 0, b[100] = { 0 }, k = 0;
+	while (a[i] != '\0')
+	{
+		if (a[i] >= '0' && a[i] <= '9')
+		{
+			b[k] = b[k] * 10 + a[i] - '0';
+			if (a[i + 1] < '0' || a[i + 1]>'9') k++;
+		}
+		i++;
+	}
+	for (i = 0; i < k; i++)
+	{
+		cout << b[i] << ' ';
+	}
+	cout << endl;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
